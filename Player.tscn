@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgcju41nod4b"]
 
-[ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/player.gd" id="1_kne1u"]
+[ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/playerMovement.gd" id="1_kne1u"]
 [ext_resource type="Texture2D" uid="uid://dxagk401voga4" path="res://Assets/Players/Players.png" id="1_yyr24"]
 [ext_resource type="Texture2D" uid="uid://d2b77k7v71kvd" path="res://Assets/Players/Arms.png" id="2_gqagy"]
 
