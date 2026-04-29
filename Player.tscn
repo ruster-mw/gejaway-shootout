@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bgcju41nod4b"]
+
+[ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/player.gd" id="1_kne1u"]
+[ext_resource type="Texture2D" uid="uid://dxagk401voga4" path="res://Assets/Players/Players.png" id="1_yyr24"]
+[ext_resource type="Texture2D" uid="uid://d2b77k7v71kvd" path="res://Assets/Players/Arms.png" id="2_gqagy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kne1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqagy"]
+size = Vector2(50, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8oubu"]
+size = Vector2(18, 65)
+
+[node name="Player" type="RigidBody2D" unique_id=1774049121]
+visibility_layer = 513
+position = Vector2(579, 364)
+physics_material_override = SubResource("PhysicsMaterial_kne1u")
+gravity_scale = 1.5
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_kne1u")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=85813842]
+position = Vector2(-1, -26)
+shape = SubResource("RectangleShape2D_gqagy")
+
+[node name="Body" type="Sprite2D" parent="." unique_id=1538836306]
+position = Vector2(1.000001, -25.999994)
+scale = Vector2(2.7105262, 2.7105262)
+texture = ExtResource("1_yyr24")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2044056091]
+position = Vector2(-4.9999924, -57.000008)
+node_a = NodePath("../Arm")
+node_b = NodePath("..")
+
+[node name="Arm" type="RigidBody2D" parent="." unique_id=551607651]
+visibility_layer = 1025
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+linear_damp = 2.0
+angular_damp = 0.05
+
+[node name="HoldingPoint" type="Marker2D" parent="Arm" unique_id=1967647792]
+position = Vector2(-5, 2)
+
+[node name="Arm" type="Sprite2D" parent="Arm" unique_id=341076305]
+position = Vector2(-5, -26)
+scale = Vector2(2.9494731, 2.9494734)
+texture = ExtResource("2_gqagy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm" unique_id=1113004069]
+position = Vector2(-5, -26.5)
+shape = SubResource("RectangleShape2D_8oubu")
+
+[node name="LeftFloorRayCast" type="RayCast2D" parent="." unique_id=2116509609]
+position = Vector2(24, 3)
+target_position = Vector2(0, 60)
+
+[node name="RightFloorRayCast" type="RayCast2D" parent="." unique_id=960897052]
+position = Vector2(-26, 3)
+target_position = Vector2(0, 60)
+
+[node name="FloorRayCast" type="RayCast2D" parent="." unique_id=373225311]
+position = Vector2(0, 3)
+target_position = Vector2(0, 60)
