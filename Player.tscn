@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://bgcju41nod4b"]
 
 [ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/playerMovement.gd" id="1_kne1u"]
-[ext_resource type="Texture2D" uid="uid://dxagk401voga4" path="res://Assets/Players/Players.png" id="1_yyr24"]
-[ext_resource type="Texture2D" uid="uid://d2b77k7v71kvd" path="res://Assets/Players/Arms.png" id="2_gqagy"]
+[ext_resource type="Texture2D" uid="uid://ddd0auehllksg" path="res://Assets/Players/bully.png" id="2_kpjcp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kne1u"]
 
@@ -37,7 +36,9 @@ shape = SubResource("RectangleShape2D_gqagy")
 [node name="Body" type="Sprite2D" parent="." unique_id=1538836306]
 position = Vector2(1.000001, -25.999994)
 scale = Vector2(2.7105262, 2.7105262)
-texture = ExtResource("1_yyr24")
+texture = ExtResource("2_kpjcp")
+region_enabled = true
+region_rect = Rect2(5, 8, 22, 68)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2044056091]
 position = Vector2(-4.9999924, -57.000008)
@@ -58,7 +59,9 @@ position = Vector2(-5, 2)
 [node name="Arm" type="Sprite2D" parent="Arm" unique_id=341076305]
 position = Vector2(-5, -26)
 scale = Vector2(2.9494731, 2.9494734)
-texture = ExtResource("2_gqagy")
+texture = ExtResource("2_kpjcp")
+region_enabled = true
+region_rect = Rect2(31, 32, 8, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arm" unique_id=1113004069]
 position = Vector2(-5, -26.5)
