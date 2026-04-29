@@ -6,6 +6,9 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kne1u"]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kne1u"]
+b = Vector2(0, 2)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqagy"]
 size = Vector2(50, 174)
 
@@ -20,6 +23,12 @@ gravity_scale = 1.5
 contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_kne1u")
+
+[node name="FloorShapeCast" type="ShapeCast2D" parent="." unique_id=1038747258]
+position = Vector2(26, 61)
+shape = SubResource("SegmentShape2D_kne1u")
+target_position = Vector2(-53, 0)
+max_results = 1
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=85813842]
 position = Vector2(-1, -26)
