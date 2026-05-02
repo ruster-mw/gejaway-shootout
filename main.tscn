@@ -1,61 +1,33 @@
 [gd_scene format=3 uid="uid://clik0p2mmoigr"]
 
-[ext_resource type="PackedScene" uid="uid://bgcju41nod4b" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://8dettu6fb3gs" path="res://Scripts/gameManager.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dyf72lsynw8ci" path="res://TemplateMap.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dj1se73ycy0nw" path="res://CameraSystem.tscn" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bgkkvevmooe6h" path="res://Assets/Square.png" id="3_h2yge"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(105, 520)
+[node name="MainGame" type="Node2D" unique_id=890047717]
+script = ExtResource("1_0xm2m")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(82, 492)
+[node name="Node2D" parent="." unique_id=563448428 instance=ExtResource("2_1bvp3")]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
-size = Vector2(1150, 20)
+[node name="TemplateMap" parent="." unique_id=551165929 instance=ExtResource("2_0xm2m")]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ig7tw"]
-friction = 0.2
+[node name="Square" type="Sprite2D" parent="." unique_id=799399881]
+position = Vector2(133, 92)
+scale = Vector2(0.6289062, 0.31640634)
+texture = ExtResource("3_h2yge")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(20, 231)
+[node name="Square2" type="Sprite2D" parent="." unique_id=138952743]
+position = Vector2(343, 210)
+scale = Vector2(0.6289062, 0.31640634)
+texture = ExtResource("3_h2yge")
 
-[node name="Node2D" type="Node2D" unique_id=890047717]
+[node name="Square3" type="Sprite2D" parent="." unique_id=2097759692]
+position = Vector2(137.00002, 210)
+scale = Vector2(0.6289062, 0.31640634)
+texture = ExtResource("3_h2yge")
 
-[node name="Player2" parent="." unique_id=1774049121 instance=ExtResource("1_ig7tw")]
-position = Vector2(345, 398)
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=435362636]
-position = Vector2(1100, 324)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1627940720]
-position = Vector2(4.5, -60)
-shape = SubResource("RectangleShape2D_h2yge")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1886774972]
-position = Vector2(-29, 41)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1611078606]
-position = Vector2(75, 236)
-shape = SubResource("RectangleShape2D_1bvp3")
-
-[node name="Player" parent="." unique_id=692065369 instance=ExtResource("1_ig7tw")]
-position = Vector2(260, 488)
-rotation = 7.853982
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=62061382]
-position = Vector2(527, 534)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=505019920]
-position = Vector2(44, 0)
-shape = SubResource("RectangleShape2D_ig7tw")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2096943145]
-position = Vector2(480, 442)
-rotation = 1.5707964
-physics_material_override = SubResource("PhysicsMaterial_ig7tw")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=2004111839]
-position = Vector2(2.5, -105.5)
-shape = SubResource("RectangleShape2D_0xm2m")
+[node name="Square4" type="Sprite2D" parent="." unique_id=1818271145]
+position = Vector2(330, 81)
+scale = Vector2(0.6289062, 0.31640634)
+texture = ExtResource("3_h2yge")

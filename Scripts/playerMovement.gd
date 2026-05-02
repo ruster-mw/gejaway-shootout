@@ -2,8 +2,10 @@ extends RigidBody2D
 
 @export var velocityX := 500.0
 @export var velocityY := 300.0
+@export var player_id : int = 1
 
 @onready var sprite : Sprite2D  = $Body
+@onready var armSprite : Sprite2D = $Arm/ArmSprite
 @onready var floorRayCast : RayCast2D = $FloorRayCast
 @onready var leftFloorRayCast : RayCast2D = $LeftFloorRayCast
 @onready var rightFloorRayCast : RayCast2D = $RightFloorRayCast
@@ -18,12 +20,14 @@ var balancePower : float = 2000.0
 var maxTurnSpeed : float = 280
 var jumpPower : float = 1100.0
 var lerpTurnTime : float = 0.5
+var jumpCoolDown = 0.15
+var jumpTime : float = 0
+
 var turningTime : float
 var unbalanacedTime : float
-
 var inContact : bool = false
 var isTurning : bool
-var turnRight : bool
+var turnRight : bool = true
 var hasAppliedDamp : bool
 
 
@@ -43,7 +47,7 @@ func _balance(delta : float) -> void:
 			
 
 func _startTurn(turningRight : bool) -> void:
-	if (isTurning || isGrounded() == false):
+	if (isTurning || isGrounded() == false || jumpTime > 0):
 		return;
 	lock_rotation = true
 	turnRight = turningRight
@@ -74,7 +78,8 @@ func jump(jumpRight : bool) -> void:
 	turningTime = 0
 
 func _handleVisuals() -> void:
-	sprite.flip_h = not facingRight
+	sprite.flip_h = !turnRight
+	armSprite.flip_h = !turnRight
 
 
 
@@ -85,22 +90,27 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("move_left"):
+	var left = "player%d_move_left" % player_id
+	var right = "player%d_move_right" % player_id
+	if Input.is_action_pressed(left):
 		_startTurn(false)
-	elif Input.is_action_pressed("move_right"):
+	elif Input.is_action_pressed(right):
 		_startTurn(true)
 		
-	if Input.is_action_just_released("jump_left"):
+	if Input.is_action_just_released(left):
 		jump(false)
-	elif Input.is_action_just_released("jump_right"):
+	elif Input.is_action_just_released(right):
 		jump(true)
 
 func _physics_process(delta: float) -> void:
+	if (jumpTime > 0):
+		jumpTime -= delta
 	inContact = get_contact_count() > 0
 	if (isTurning):
 		_turn(delta)
 	else: 
 		_balance(delta)
+	#inContact = false
 	#_handleInput()
 	_handleVisuals()
 	

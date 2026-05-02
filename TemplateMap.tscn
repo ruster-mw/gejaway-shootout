@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dyf72lsynw8ci"]
+
+[ext_resource type="Texture2D" uid="uid://dhgnb5edk74x2" path="res://Assets/Maps/TemplateMap/groundPlatform.png" id="1_mppcb"]
+[ext_resource type="Texture2D" uid="uid://b3oiycm2p0ybm" path="res://Assets/Maps/TemplateMap/box.png" id="2_i3itl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jicg0"]
+size = Vector2(1662, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t84c5"]
+size = Vector2(145, 556)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_111yu"]
+size = Vector2(120, 321)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhtx0"]
+size = Vector2(1651, 101)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mppcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4isi"]
+size = Vector2(187.25, 159)
+
+[node name="TemplateMap" type="Node2D" unique_id=551165929]
+
+[node name="Foreground" type="Node" parent="." unique_id=1509358515]
+
+[node name="Floor" type="StaticBody2D" parent="Foreground" unique_id=612662242]
+position = Vector2(580, 611)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground/Floor" unique_id=1782652164]
+position = Vector2(53.00006, -14.999994)
+scale = Vector2(103.62499, 6.25)
+texture = ExtResource("1_mppcb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Floor" unique_id=453344896]
+position = Vector2(52, -14.5)
+shape = SubResource("RectangleShape2D_jicg0")
+
+[node name="Floor2" type="StaticBody2D" parent="Foreground" unique_id=2040957981]
+position = Vector2(-383, 370)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground/Floor2" unique_id=254004831]
+scale = Vector2(8.6875, 34.6875)
+texture = ExtResource("1_mppcb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Floor2" unique_id=1243722095]
+position = Vector2(-4.5, 4)
+shape = SubResource("RectangleShape2D_t84c5")
+
+[node name="Floor3" type="StaticBody2D" parent="Foreground" unique_id=641809549]
+position = Vector2(1115, 381)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground/Floor3" unique_id=1422279291]
+scale = Vector2(7.312494, 20.500002)
+texture = ExtResource("1_mppcb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Floor3" unique_id=1304741708]
+shape = SubResource("RectangleShape2D_111yu")
+
+[node name="Floor4" type="StaticBody2D" parent="Foreground" unique_id=207656227]
+position = Vector2(1877, 270)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground/Floor4" unique_id=1319468963]
+scale = Vector2(103.62499, 6.25)
+texture = ExtResource("1_mppcb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Floor4" unique_id=561980282]
+shape = SubResource("RectangleShape2D_xhtx0")
+
+[node name="Box" type="RigidBody2D" parent="Foreground" unique_id=1755759383]
+position = Vector2(1810, 133)
+mass = 5.456
+physics_material_override = SubResource("PhysicsMaterial_mppcb")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground/Box" unique_id=93699439]
+position = Vector2(7.6293945e-06, -0.49998474)
+scale = Vector2(7.9999995, 8.944446)
+texture = ExtResource("2_i3itl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Box" unique_id=330270036]
+shape = SubResource("RectangleShape2D_g4isi")
+
+[node name="Background" type="Node" parent="." unique_id=1399135726]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgcju41nod4b"]
 
 [ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/playerMovement.gd" id="1_kne1u"]
-[ext_resource type="Texture2D" uid="uid://ddd0auehllksg" path="res://Assets/Players/bully.png" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://22soq046sy7k" path="res://Assets/Players/goat.png" id="2_kpjcp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kne1u"]
 
@@ -9,12 +9,12 @@
 b = Vector2(0, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqagy"]
-size = Vector2(50, 174)
+size = Vector2(52, 174)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oubu"]
 size = Vector2(18, 65)
 
-[node name="Player" type="RigidBody2D" unique_id=1774049121]
+[node name="Player" type="RigidBody2D" unique_id=1774049121 groups=["players"]]
 visibility_layer = 513
 position = Vector2(579, 364)
 physics_material_override = SubResource("PhysicsMaterial_kne1u")
@@ -24,13 +24,13 @@ max_contacts_reported = 3
 script = ExtResource("1_kne1u")
 
 [node name="FloorShapeCast" type="ShapeCast2D" parent="." unique_id=1038747258]
-position = Vector2(26, 61)
+position = Vector2(34, 61)
 shape = SubResource("SegmentShape2D_kne1u")
-target_position = Vector2(-53, 0)
+target_position = Vector2(-68, 0)
 max_results = 1
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=85813842]
-position = Vector2(-1, -26)
+position = Vector2(0, -26)
 shape = SubResource("RectangleShape2D_gqagy")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1538836306]
@@ -56,7 +56,7 @@ angular_damp = 0.05
 [node name="HoldingPoint" type="Marker2D" parent="Arm" unique_id=1967647792]
 position = Vector2(-5, 2)
 
-[node name="Arm" type="Sprite2D" parent="Arm" unique_id=341076305]
+[node name="ArmSprite" type="Sprite2D" parent="Arm" unique_id=341076305]
 position = Vector2(-5, -26)
 scale = Vector2(2.9494731, 2.9494734)
 texture = ExtResource("2_kpjcp")
@@ -69,12 +69,12 @@ shape = SubResource("RectangleShape2D_8oubu")
 
 [node name="LeftFloorRayCast" type="RayCast2D" parent="." unique_id=2116509609]
 position = Vector2(24, 3)
-target_position = Vector2(0, 60)
+target_position = Vector2(0, 65)
 
 [node name="RightFloorRayCast" type="RayCast2D" parent="." unique_id=960897052]
 position = Vector2(-26, 3)
-target_position = Vector2(0, 60)
+target_position = Vector2(0, 65)
 
 [node name="FloorRayCast" type="RayCast2D" parent="." unique_id=373225311]
 position = Vector2(0, 3)
-target_position = Vector2(0, 60)
+target_position = Vector2(0, 65)

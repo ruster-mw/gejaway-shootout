@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dj1se73ycy0nw"]
+
+[ext_resource type="Script" uid="uid://cgtdyll7mcn3t" path="res://Scripts/CameraSystem.gd" id="1_iotyo"]
+
+[node name="CameraSystem" type="Camera2D" unique_id=563448428]
+position = Vector2(576, 324)
+script = ExtResource("1_iotyo")
