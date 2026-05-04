@@ -13,12 +13,15 @@ size = Vector2(145, 556)
 size = Vector2(120, 321)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhtx0"]
-size = Vector2(1651, 101)
+size = Vector2(1651, 86.5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mppcb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4isi"]
 size = Vector2(187.25, 159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mppcb"]
+size = Vector2(158, 156)
 
 [node name="TemplateMap" type="Node2D" unique_id=551165929]
 
@@ -69,6 +72,7 @@ scale = Vector2(103.62499, 6.25)
 texture = ExtResource("1_mppcb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Floor4" unique_id=561980282]
+position = Vector2(0, 7.25)
 shape = SubResource("RectangleShape2D_xhtx0")
 
 [node name="Box" type="RigidBody2D" parent="Foreground" unique_id=1755759383]
@@ -84,5 +88,13 @@ texture = ExtResource("2_i3itl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Box" unique_id=330270036]
 shape = SubResource("RectangleShape2D_g4isi")
+
+[node name="DeathZone" type="Area2D" parent="Foreground" unique_id=457034211]
+position = Vector2(-168, 397)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/DeathZone" unique_id=36673119]
+position = Vector2(69, 68)
+shape = SubResource("RectangleShape2D_mppcb")
 
 [node name="Background" type="Node" parent="." unique_id=1399135726]

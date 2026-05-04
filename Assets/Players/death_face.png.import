@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cogqgdtos3acf"
-path="res://.godot/imported/mogger.png-85f9488f03a6fc4a31b82eecd2c36555.ctex"
+uid="uid://ox3cimtsbnri"
+path="res://.godot/imported/death_face.png-51a1933f301a092e6a9ec92120e4ab86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Players/mogger.png"
-dest_files=["res://.godot/imported/mogger.png-85f9488f03a6fc4a31b82eecd2c36555.ctex"]
+source_file="res://Assets/Players/death_face.png"
+dest_files=["res://.godot/imported/death_face.png-51a1933f301a092e6a9ec92120e4ab86.ctex"]
 
 [params]
 

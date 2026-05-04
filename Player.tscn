@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgcju41nod4b"]
 
-[ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/playerMovement.gd" id="1_kne1u"]
-[ext_resource type="Texture2D" uid="uid://22soq046sy7k" path="res://Assets/Players/goat.png" id="2_kpjcp"]
+[ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/PlayerScripts/Player.gd" id="1_kne1u"]
+[ext_resource type="Texture2D" uid="uid://csl3gsshi02gg" path="res://Assets/Players/solider.png" id="2_kpjcp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kne1u"]
 
@@ -9,7 +9,7 @@
 b = Vector2(0, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqagy"]
-size = Vector2(52, 174)
+size = Vector2(52, 173)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oubu"]
 size = Vector2(18, 65)
@@ -30,10 +30,11 @@ target_position = Vector2(-68, 0)
 max_results = 1
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=85813842]
-position = Vector2(0, -26)
+position = Vector2(0, -25.5)
 shape = SubResource("RectangleShape2D_gqagy")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1538836306]
+z_index = 9
 position = Vector2(1.000001, -25.999994)
 scale = Vector2(2.7105262, 2.7105262)
 texture = ExtResource("2_kpjcp")
@@ -57,6 +58,7 @@ angular_damp = 0.05
 position = Vector2(-5, 2)
 
 [node name="ArmSprite" type="Sprite2D" parent="Arm" unique_id=341076305]
+z_index = 10
 position = Vector2(-5, -26)
 scale = Vector2(2.9494731, 2.9494734)
 texture = ExtResource("2_kpjcp")
@@ -68,13 +70,16 @@ position = Vector2(-5, -26.5)
 shape = SubResource("RectangleShape2D_8oubu")
 
 [node name="LeftFloorRayCast" type="RayCast2D" parent="." unique_id=2116509609]
+z_index = 9
 position = Vector2(24, 3)
 target_position = Vector2(0, 65)
 
 [node name="RightFloorRayCast" type="RayCast2D" parent="." unique_id=960897052]
+z_index = 9
 position = Vector2(-26, 3)
 target_position = Vector2(0, 65)
 
 [node name="FloorRayCast" type="RayCast2D" parent="." unique_id=373225311]
+z_index = 9
 position = Vector2(0, 3)
 target_position = Vector2(0, 65)
