@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bbygdaqb0wbk8"]
+
+[ext_resource type="Script" uid="uid://b4pxr4f8bsu3j" path="res://Scripts/PlayerScripts/Ragdoll.gd" id="1_mndxs"]
+[ext_resource type="Texture2D" uid="uid://ddd0auehllksg" path="res://Assets/Players/bully.png" id="2_ek0f2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm1gt"]
+size = Vector2(52, 173)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mndxs"]
+size = Vector2(18, 65)
+
+[node name="Ragdoll" type="RigidBody2D" unique_id=1844826383 groups=["camera_objects"]]
+script = ExtResource("1_mndxs")
+
+[node name="Body" type="Sprite2D" parent="." unique_id=198323385]
+z_index = 9
+scale = Vector2(2.7105262, 2.7105262)
+texture = ExtResource("2_ek0f2")
+region_enabled = true
+region_rect = Rect2(4, 8, 24, 68)
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1274220232]
+shape = SubResource("RectangleShape2D_pm1gt")
+debug_color = Color(0, 0.6, 0.7019608, 0.12156863)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=885430816]
+position = Vector2(-8, -29)
+node_a = NodePath("../Arm")
+node_b = NodePath("..")
+
+[node name="Arm" type="RigidBody2D" parent="." unique_id=1282128940]
+visibility_layer = 1025
+position = Vector2(-3, 28)
+collision_layer = 0
+collision_mask = 0
+mass = 0.01
+linear_damp = 2.0
+angular_damp = 0.05
+metadata/_edit_group_ = true
+
+[node name="HoldingPoint" type="Marker2D" parent="Arm" unique_id=484760210]
+position = Vector2(-5, 2)
+
+[node name="ArmSprite" type="Sprite2D" parent="Arm" unique_id=1956207118]
+z_index = 10
+position = Vector2(-5, -26)
+scale = Vector2(2.9494731, 2.9494734)
+texture = ExtResource("2_ek0f2")
+region_enabled = true
+region_rect = Rect2(31, 32, 8, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm" unique_id=887440919]
+position = Vector2(-5, -26.5)
+shape = SubResource("RectangleShape2D_mndxs")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhgnb5edk74x2" path="res://Assets/Maps/TemplateMap/groundPlatform.png" id="1_mppcb"]
 [ext_resource type="Texture2D" uid="uid://b3oiycm2p0ybm" path="res://Assets/Maps/TemplateMap/box.png" id="2_i3itl"]
+[ext_resource type="PackedScene" uid="uid://gs1wqogwhfma" path="res://GameObjects/DeathArea.tscn" id="3_i3itl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jicg0"]
 size = Vector2(1662, 99)
@@ -19,9 +20,6 @@ size = Vector2(1651, 86.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4isi"]
 size = Vector2(187.25, 159)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mppcb"]
-size = Vector2(158, 156)
 
 [node name="TemplateMap" type="Node2D" unique_id=551165929]
 
@@ -89,12 +87,10 @@ texture = ExtResource("2_i3itl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Box" unique_id=330270036]
 shape = SubResource("RectangleShape2D_g4isi")
 
-[node name="DeathZone" type="Area2D" parent="Foreground" unique_id=457034211]
-position = Vector2(-168, 397)
+[node name="DeathArea" parent="." unique_id=1926885651 instance=ExtResource("3_i3itl")]
+position = Vector2(-111, 457)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/DeathZone" unique_id=36673119]
-position = Vector2(69, 68)
-shape = SubResource("RectangleShape2D_mppcb")
-
 [node name="Background" type="Node" parent="." unique_id=1399135726]
+
+[editable path="DeathArea"]

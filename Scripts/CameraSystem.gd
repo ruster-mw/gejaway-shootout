@@ -7,7 +7,7 @@ extends Camera2D
 @export var margin: Vector2 = Vector2(200, 200) 
 
 func _process(delta: float) -> void:
-	var players = get_tree().get_nodes_in_group("players")
+	var players = get_tree().get_nodes_in_group("camera_objects")
 	if players.is_empty():
 		print("nothing")
 		return

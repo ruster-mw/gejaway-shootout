@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgcju41nod4b"]
 
 [ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/PlayerScripts/Player.gd" id="1_kne1u"]
-[ext_resource type="Texture2D" uid="uid://csl3gsshi02gg" path="res://Assets/Players/solider.png" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://dvrh0h1hgrru1" path="res://Assets/Players/sarah.png" id="2_kne1u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kne1u"]
 
@@ -14,14 +14,15 @@ size = Vector2(52, 173)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oubu"]
 size = Vector2(18, 65)
 
-[node name="Player" type="RigidBody2D" unique_id=1774049121 groups=["players"]]
+[node name="Player" type="RigidBody2D" unique_id=1774049121 groups=["camera_objects", "players"]]
 visibility_layer = 513
-position = Vector2(579, 364)
+position = Vector2(339, 204)
 physics_material_override = SubResource("PhysicsMaterial_kne1u")
 gravity_scale = 1.5
 contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_kne1u")
+metadata/_edit_group_ = true
 
 [node name="FloorShapeCast" type="ShapeCast2D" parent="." unique_id=1038747258]
 position = Vector2(34, 61)
@@ -32,14 +33,15 @@ max_results = 1
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=85813842]
 position = Vector2(0, -25.5)
 shape = SubResource("RectangleShape2D_gqagy")
+debug_color = Color(0, 0.6, 0.7019608, 0.12156863)
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1538836306]
 z_index = 9
-position = Vector2(1.000001, -25.999994)
+position = Vector2(-2, -26)
 scale = Vector2(2.7105262, 2.7105262)
-texture = ExtResource("2_kpjcp")
+texture = ExtResource("2_kne1u")
 region_enabled = true
-region_rect = Rect2(5, 8, 22, 68)
+region_rect = Rect2(4, 8, 24, 68)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2044056091]
 position = Vector2(-4.9999924, -57.000008)
@@ -61,7 +63,7 @@ position = Vector2(-5, 2)
 z_index = 10
 position = Vector2(-5, -26)
 scale = Vector2(2.9494731, 2.9494734)
-texture = ExtResource("2_kpjcp")
+texture = ExtResource("2_kne1u")
 region_enabled = true
 region_rect = Rect2(31, 32, 8, 24)
 

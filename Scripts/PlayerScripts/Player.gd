@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal died(player: RigidBody2D)
+
 @export var velocityX := 500.0
 @export var velocityY := 300.0
 @export var player_id : int = 1
@@ -11,7 +13,6 @@ extends RigidBody2D
 @onready var rightFloorRayCast : RayCast2D = $RightFloorRayCast
 @onready var shapeCase : ShapeCast2D  = $FloorShapeCast
 
-
 var facingRight : bool = true
 var getrotation : float = 0.0
 var maxUpRightAngle : float = 7.2
@@ -20,8 +21,8 @@ var balancePower : float = 2000.0
 var maxTurnSpeed : float = 280
 var jumpPower : float = 1100.0
 var lerpTurnTime : float = 0.5
-var jumpCoolDown = 0.15
-var jumpTime : float = 0
+var jumpCoolDown = 0.05
+var jumpTime : float = 0.05
 
 var turningTime : float
 var unbalanacedTime : float
@@ -73,6 +74,7 @@ func jump(jumpRight : bool) -> void:
 		return;
 	if (isGrounded()):
 		apply_central_impulse(Vector2.UP.rotated(rotation) * jumpPower)
+		jumpTime = jumpCoolDown
 	isTurning = false
 	lock_rotation = false
 	turningTime = 0
@@ -81,10 +83,26 @@ func _handleVisuals() -> void:
 	sprite.flip_h = !turnRight
 	armSprite.flip_h = !turnRight
 
-
-
-
-
+func die() -> void:
+	died.emit(self)
+	var RagdollScene = load("res://Ragdoll.tscn")
+	var instance = RagdollScene.instantiate()
+	instance.rotation = rotation
+	instance.global_position = global_position
+	instance.linear_velocity = linear_velocity
+	instance.angular_velocity = angular_velocity
+	instance.get_node("Body").texture = get_node("Body").texture
+	instance.turnRight = turnRight
+	var arm_instance = instance.get_node("Arm")
+	arm_instance.angular_velocity = get_node("Arm").angular_velocity	
+	arm_instance.get_node("ArmSprite").texture = get_node("Arm/ArmSprite").texture
+	get_parent().call_deferred("add_child", instance)
+	get_node("Hitbox").set_deferred("disabled", true)
+	hide()
+	
+	instance.add_to_group("camera_objects")
+	remove_from_group("camera_objects")
+	
 
 func _ready() -> void:	
 	pass
