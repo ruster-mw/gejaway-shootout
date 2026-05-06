@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cq6v1njdhr82e"]
+
+[ext_resource type="Script" uid="uid://dokpccmw2sgxn" path="res://Scripts/ObjectsScripts/DamageArea.gd" id="1_ieu3b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8c08a"]
+size = Vector2(282, 272)
+
+[node name="DamageArea" type="Area2D" unique_id=1817635903]
+script = ExtResource("1_ieu3b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=536255892]
+shape = SubResource("RectangleShape2D_8c08a")

@@ -2,8 +2,8 @@ extends Camera2D
 
 @export var move_speed: float = 5.0  
 @export var zoom_speed: float = 5.0  
-@export var min_zoom: float = 0.1  
-@export var max_zoom: float = 0.8   
+@export var min_zoom: float = 1  
+@export var max_zoom: float = 1   
 @export var margin: Vector2 = Vector2(200, 200) 
 
 func _process(delta: float) -> void:

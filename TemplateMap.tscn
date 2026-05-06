@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dyf72lsynw8ci"]
 
+[ext_resource type="PackedScene" uid="uid://cq6v1njdhr82e" path="res://GameObjects/DamageArea.tscn" id="1_jicg0"]
 [ext_resource type="Texture2D" uid="uid://dhgnb5edk74x2" path="res://Assets/Maps/TemplateMap/groundPlatform.png" id="1_mppcb"]
 [ext_resource type="Texture2D" uid="uid://b3oiycm2p0ybm" path="res://Assets/Maps/TemplateMap/box.png" id="2_i3itl"]
 [ext_resource type="PackedScene" uid="uid://gs1wqogwhfma" path="res://GameObjects/DeathArea.tscn" id="3_i3itl"]
@@ -24,6 +25,14 @@ size = Vector2(187.25, 159)
 [node name="TemplateMap" type="Node2D" unique_id=551165929]
 
 [node name="Foreground" type="Node" parent="." unique_id=1509358515]
+
+[node name="DamageArea" parent="Foreground" unique_id=1817635903 instance=ExtResource("1_jicg0")]
+position = Vector2(659, 381)
+metadata/_edit_group_ = true
+
+[node name="DeathArea" parent="Foreground" unique_id=1926885651 instance=ExtResource("3_i3itl")]
+position = Vector2(-111, 457)
+metadata/_edit_group_ = true
 
 [node name="Floor" type="StaticBody2D" parent="Foreground" unique_id=612662242]
 position = Vector2(580, 611)
@@ -87,10 +96,7 @@ texture = ExtResource("2_i3itl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Box" unique_id=330270036]
 shape = SubResource("RectangleShape2D_g4isi")
 
-[node name="DeathArea" parent="." unique_id=1926885651 instance=ExtResource("3_i3itl")]
-position = Vector2(-111, 457)
-metadata/_edit_group_ = true
-
 [node name="Background" type="Node" parent="." unique_id=1399135726]
 
-[editable path="DeathArea"]
+[editable path="Foreground/DamageArea"]
+[editable path="Foreground/DeathArea"]

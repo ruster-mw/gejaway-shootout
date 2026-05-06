@@ -12,6 +12,7 @@ signal died(player: RigidBody2D)
 @onready var leftFloorRayCast : RayCast2D = $LeftFloorRayCast
 @onready var rightFloorRayCast : RayCast2D = $RightFloorRayCast
 @onready var shapeCase : ShapeCast2D  = $FloorShapeCast
+@onready var health: HealthSystem = $HealthSystem
 
 var facingRight : bool = true
 var getrotation : float = 0.0
@@ -22,6 +23,7 @@ var maxTurnSpeed : float = 280
 var jumpPower : float = 1100.0
 var lerpTurnTime : float = 0.5
 var jumpCoolDown = 0.05
+
 var jumpTime : float = 0.05
 
 var turningTime : float
@@ -85,6 +87,7 @@ func _handleVisuals() -> void:
 
 func die() -> void:
 	died.emit(self)
+	disable()
 	var RagdollScene = load("res://Ragdoll.tscn")
 	var instance = RagdollScene.instantiate()
 	instance.rotation = rotation
@@ -103,9 +106,17 @@ func die() -> void:
 	instance.add_to_group("camera_objects")
 	remove_from_group("camera_objects")
 	
+func disable() -> void:
+	jumpTime = 0
+	turningTime = 0
+	unbalanacedTime = 0
+	inContact = false
+	isTurning = false
+	rotation = 0
+	
 
 func _ready() -> void:	
-	pass
+	health.died.connect(die)
 
 func _process(delta: float) -> void:
 	var left = "player%d_move_left" % player_id
@@ -119,6 +130,7 @@ func _process(delta: float) -> void:
 		jump(false)
 	elif Input.is_action_just_released(right):
 		jump(true)
+	
 
 func _physics_process(delta: float) -> void:
 	if (jumpTime > 0):

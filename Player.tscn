@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bgcju41nod4b"]
 
 [ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/PlayerScripts/Player.gd" id="1_kne1u"]
-[ext_resource type="Texture2D" uid="uid://dvrh0h1hgrru1" path="res://Assets/Players/sarah.png" id="2_kne1u"]
+[ext_resource type="Script" uid="uid://cpt0im2v06e5x" path="res://Scripts/HealthSystem.gd" id="2_kne1u"]
+[ext_resource type="Texture2D" uid="uid://22soq046sy7k" path="res://Assets/Players/goat.png" id="2_kpjcp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kne1u"]
 
@@ -10,6 +11,9 @@ b = Vector2(0, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gqagy"]
 size = Vector2(52, 173)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kpjcp"]
+load_path = "res://.godot/imported/goat.png-2c742e0cb60fff8d8e7a69d1b5740f21.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oubu"]
 size = Vector2(18, 65)
@@ -23,6 +27,9 @@ contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_kne1u")
 metadata/_edit_group_ = true
+
+[node name="HealthSystem" type="Node" parent="." unique_id=1839058452]
+script = ExtResource("2_kne1u")
 
 [node name="FloorShapeCast" type="ShapeCast2D" parent="." unique_id=1038747258]
 position = Vector2(34, 61)
@@ -38,13 +45,13 @@ debug_color = Color(0, 0.6, 0.7019608, 0.12156863)
 [node name="Body" type="Sprite2D" parent="." unique_id=1538836306]
 z_index = 9
 position = Vector2(-2, -26)
-scale = Vector2(2.7105262, 2.7105262)
-texture = ExtResource("2_kne1u")
+scale = Vector2(1.355, 1.355)
+texture = SubResource("CompressedTexture2D_kpjcp")
 region_enabled = true
-region_rect = Rect2(4, 8, 24, 68)
+region_rect = Rect2(8, 16, 48, 136)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2044056091]
-position = Vector2(-4.9999924, -57.000008)
+position = Vector2(-4.9999924, -58.000008)
 node_a = NodePath("../Arm")
 node_b = NodePath("..")
 
@@ -62,10 +69,10 @@ position = Vector2(-5, 2)
 [node name="ArmSprite" type="Sprite2D" parent="Arm" unique_id=341076305]
 z_index = 10
 position = Vector2(-5, -26)
-scale = Vector2(2.9494731, 2.9494734)
-texture = ExtResource("2_kne1u")
+scale = Vector2(1.355, 1.355)
+texture = ExtResource("2_kpjcp")
 region_enabled = true
-region_rect = Rect2(31, 32, 8, 24)
+region_rect = Rect2(60, 62, 20, 52)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arm" unique_id=1113004069]
 position = Vector2(-5, -26.5)

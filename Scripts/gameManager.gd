@@ -11,18 +11,17 @@ func createPlayers() -> void:
 		player_instance.player_id = i + 1
 		player_instance.died.connect(player_death)
 		add_child(player_instance)
-		print(player_instance.position)
 	
 
 func player_death(player: RigidBody2D) -> void: 
 	player_respawn(player)
 	
 func player_respawn(player: RigidBody2D) -> void:
-	await get_tree().create_timer(5.0).timeout
-	print("dziala")
+	await get_tree().create_timer(2.0).timeout
 	player.show()
 	player.get_node("Hitbox").disabled = false
-	player.position = Vector2(229, 300)
+	player.add_to_group("camera_objects")
+	player.position = Vector2(365, 486) #todo add actual checkpoints
 	
 func _ready() -> void:
 	createPlayers()
