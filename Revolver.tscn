@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bsbr7rabhgu6g"]
+
+[ext_resource type="Script" uid="uid://bb0guc1y3gkse" path="res://Scripts/WeaponScripts/BaseWeapon.gd" id="1_8lx1p"]
+[ext_resource type="Texture2D" uid="uid://d3yydknje168d" path="res://Assets/PowerUps/revolver.png" id="2_l747f"]
+
+[node name="Revolver" type="Node2D" unique_id=1366969992]
+script = ExtResource("1_8lx1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1834806780]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_l747f")
+
+[node name="MuzzlePoint" type="Node2D" parent="." unique_id=226228691]

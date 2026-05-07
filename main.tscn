@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://clik0p2mmoigr"]
 
-[ext_resource type="Script" uid="uid://8dettu6fb3gs" path="res://Scripts/gameManager.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://8dettu6fb3gs" path="res://Scripts/GameManager.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dyf72lsynw8ci" path="res://TemplateMap.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dj1se73ycy0nw" path="res://CameraSystem.tscn" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bgkkvevmooe6h" path="res://Assets/Square.png" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bsbr7rabhgu6g" path="res://Revolver.tscn" id="5_lquwl"]
 
 [node name="MainGame" type="Node2D" unique_id=890047717]
 script = ExtResource("1_0xm2m")
@@ -31,3 +32,9 @@ texture = ExtResource("3_h2yge")
 position = Vector2(330, 81)
 scale = Vector2(0.6289062, 0.31640634)
 texture = ExtResource("3_h2yge")
+
+[node name="Revolver" parent="." unique_id=1366969992 instance=ExtResource("5_lquwl")]
+position = Vector2(551, 424)
+metadata/_edit_group_ = true
+
+[editable path="Revolver"]
