@@ -7,8 +7,8 @@ signal damaged(amount)
 signal healed(amount)
 
 @export var maxHealth : float = 100.0
-
 var currentHealth : float
+
 
 func _ready():
 	currentHealth = maxHealth
@@ -27,11 +27,13 @@ func takeDamage(amount: float):
 func heal(amount: float):
 	if currentHealth <= 0:
 		return  
-
 	var old = currentHealth
 	currentHealth = min(maxHealth, currentHealth + amount)
 	emit_signal("health_changed", old, currentHealth)
 	emit_signal("healed", amount)
 
+func setMaxHealth() -> void:
+	currentHealth = maxHealth
+	
 func isDead() -> bool:
 	return currentHealth <= 0

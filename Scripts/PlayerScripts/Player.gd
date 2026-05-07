@@ -86,6 +86,7 @@ func _handleVisuals() -> void:
 	armSprite.flip_h = !turnRight
 
 func die() -> void:
+	print("%d died" % player_id)
 	died.emit(self)
 	disable()
 	var RagdollScene = load("res://Ragdoll.tscn")
@@ -115,8 +116,13 @@ func disable() -> void:
 	rotation = 0
 	
 
+
+func takeDamage(amount : float) -> void:
+	print("%d took damage %d" % [player_id,amount])
+
 func _ready() -> void:	
 	health.died.connect(die)
+	health.damaged.connect(takeDamage)
 
 func _process(delta: float) -> void:
 	var left = "player%d_move_left" % player_id

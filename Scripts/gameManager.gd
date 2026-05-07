@@ -18,6 +18,7 @@ func player_death(player: RigidBody2D) -> void:
 	
 func player_respawn(player: RigidBody2D) -> void:
 	await get_tree().create_timer(2.0).timeout
+	player.health.setMaxHealth()
 	player.show()
 	player.get_node("Hitbox").disabled = false
 	player.add_to_group("camera_objects")

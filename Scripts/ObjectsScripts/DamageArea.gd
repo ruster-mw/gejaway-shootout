@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var damage: float = 10.0
-@export var damage_interval: float = 0.5 
+@export var damage: float = 50.0
+@export var damage_interval: float = 1 
 
 var bodies_inside: Array = []
 
