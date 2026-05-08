@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsbr7rabhgu6g"]
 
-[ext_resource type="Script" uid="uid://bb0guc1y3gkse" path="res://Scripts/WeaponScripts/BaseWeapon.gd" id="1_8lx1p"]
+[ext_resource type="Script" uid="uid://ct3a5xlj2htj3" path="res://Scripts/WeaponScripts/Revolver.gd" id="1_8lx1p"]
 [ext_resource type="Texture2D" uid="uid://d3yydknje168d" path="res://Assets/PowerUps/revolver.png" id="2_l747f"]
 
 [node name="Revolver" type="Node2D" unique_id=1366969992]
@@ -11,3 +11,8 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_l747f")
 
 [node name="MuzzlePoint" type="Node2D" parent="." unique_id=226228691]
+position = Vector2(25, -8)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=220247241]
+width = 5.0
+default_color = Color(1, 0.35977808, 0.6318136, 1)

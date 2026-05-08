@@ -15,19 +15,19 @@ func pick_up(player: RigidBody2D) -> void:
 	holder = player
 	is_held = true
 	pickedUp.emit(self)
-	_on_picked_up()
+	on_picked_up()
 
 func use() -> void:
 	if ammo <= 0:
 		return
 	ammo -= 1
 	used.emit()
-	_fire()
+	fire()
 	if ammo <= 0:
 		exhausted.emit()
 
-func _on_picked_up() -> void:
+func on_picked_up() -> void:
 	pass
 
-func _fire() -> void:
+func fire() -> void:
 	pass

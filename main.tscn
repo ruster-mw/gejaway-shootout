@@ -34,7 +34,8 @@ scale = Vector2(0.6289062, 0.31640634)
 texture = ExtResource("3_h2yge")
 
 [node name="Revolver" parent="." unique_id=1366969992 instance=ExtResource("5_lquwl")]
-position = Vector2(551, 424)
+position = Vector2(639.99994, 430.99997)
+rotation = -3.1817353
 metadata/_edit_group_ = true
 
 [editable path="Revolver"]

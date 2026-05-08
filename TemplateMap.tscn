@@ -11,6 +11,9 @@ size = Vector2(1662, 99)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t84c5"]
 size = Vector2(145, 556)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_biwu2"]
+size = Vector2(122, 128)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_111yu"]
 size = Vector2(120, 321)
 
@@ -27,7 +30,7 @@ size = Vector2(187.25, 159)
 [node name="Foreground" type="Node" parent="." unique_id=1509358515]
 
 [node name="DamageArea" parent="Foreground" unique_id=1817635903 instance=ExtResource("1_jicg0")]
-position = Vector2(34, 417)
+position = Vector2(1199, 75)
 metadata/_edit_group_ = true
 
 [node name="DeathArea" parent="Foreground" unique_id=1926885651 instance=ExtResource("3_i3itl")]
@@ -58,6 +61,19 @@ texture = ExtResource("1_mppcb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Floor2" unique_id=1243722095]
 position = Vector2(-4.5, 4)
 shape = SubResource("RectangleShape2D_t84c5")
+
+[node name="Floor5" type="StaticBody2D" parent="Foreground" unique_id=1201526011]
+position = Vector2(499, 483)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Foreground/Floor5" unique_id=1396662161]
+position = Vector2(-17.250029, -50.5)
+scale = Vector2(6.5312467, 6.8125005)
+texture = ExtResource("1_mppcb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Floor5" unique_id=1010613839]
+position = Vector2(-15, -50)
+shape = SubResource("RectangleShape2D_biwu2")
 
 [node name="Floor3" type="StaticBody2D" parent="Foreground" unique_id=641809549]
 position = Vector2(1115, 381)
