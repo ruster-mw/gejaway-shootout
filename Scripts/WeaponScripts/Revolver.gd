@@ -6,7 +6,8 @@ extends BaseWeapon
 @export var bulletSpread : float = 0.05
 @export var bulletDamage : float = 30
 @export var knockback : float = 200
-@export var bulletRange : float = 2500
+@export var bulletRange : float = 900
+@export var falloff : float = 0.15
 
 @onready var muzzlePoint = $MuzzlePoint
 @onready var ray_line = $Line2D
@@ -25,7 +26,10 @@ func fire() -> void:
 		print("found a result")
 		if result.collider.has_node("HealthSystem"):
 			var health = result.collider.get_node("HealthSystem")
-			health.takeDamage(bulletDamage)
+			var rangePercent = floor((result.position.distance_to(origin) / bulletRange) * 100)
+			print(rangePercent)
+			var finalDamage = max(0, bulletDamage - (rangePercent * falloff))
+			health.takeDamage(finalDamage)
 		if result.collider is RigidBody2D:	
 			print("applied knockback")
 			result.collider.apply_impulse(direction * knockback, result.collider.to_local(result.position))

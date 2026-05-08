@@ -63,7 +63,7 @@ position = Vector2(-4.5, 4)
 shape = SubResource("RectangleShape2D_t84c5")
 
 [node name="Floor5" type="StaticBody2D" parent="Foreground" unique_id=1201526011]
-position = Vector2(499, 483)
+position = Vector2(515, 53)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground/Floor5" unique_id=1396662161]
