@@ -29,5 +29,5 @@ func use() -> void:
 func on_picked_up() -> void:
 	pass
 
-func fire() -> void:
-	pass
+func fire() -> Dictionary:
+	return {}

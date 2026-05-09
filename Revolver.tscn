@@ -12,7 +12,3 @@ texture = ExtResource("2_l747f")
 
 [node name="MuzzlePoint" type="Node2D" parent="." unique_id=226228691]
 position = Vector2(25, -8)
-
-[node name="Line2D" type="Line2D" parent="." unique_id=220247241]
-width = 5.0
-default_color = Color(1, 0.35977808, 0.6318136, 1)

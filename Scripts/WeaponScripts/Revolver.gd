@@ -7,12 +7,15 @@ extends BaseWeapon
 @export var bulletDamage : float = 30
 @export var knockback : float = 200
 @export var bulletRange : float = 900
-@export var falloff : float = 0.15
-
+@export var falloff : float = 0.1
+@export var shotData : Dictionary = {
+	"distance" : null,
+	"startPoint" : null,
+	"endPoint" : null 
+}
 @onready var muzzlePoint = $MuzzlePoint
-@onready var ray_line = $Line2D
 
-func fire() -> void:
+func fire() -> Dictionary:
 	var space_state = get_world_2d().direct_space_state
 	var origin = muzzlePoint.global_position
 	var direction = Vector2.RIGHT.rotated(global_rotation)  
@@ -21,22 +24,49 @@ func fire() -> void:
 	query.collision_mask = 0b00000101  # hits layers 1 and 3
 	query.exclude = [self]
 	var result = space_state.intersect_ray(query)
+	var hitPoint = result.get("position", end)
+	
+	shotData.distance = origin.distance_to(hitPoint)
+	shotData.startPoint = origin
+	shotData.endPoint = hitPoint
+	createLine(shotData)
+	
 	if result:
-		print("ray shot")
-		print("found a result")
+		if result.collider == holder:
+			return {}
+		var rangePercent = floor((result.position.distance_to(origin) / bulletRange) * 100)
 		if result.collider.has_node("HealthSystem"):
 			var health = result.collider.get_node("HealthSystem")
-			var rangePercent = floor((result.position.distance_to(origin) / bulletRange) * 100)
-			print(rangePercent)
 			var finalDamage = max(0, bulletDamage - (rangePercent * falloff))
 			health.takeDamage(finalDamage)
 		if result.collider is RigidBody2D:	
 			print("applied knockback")
 			result.collider.apply_impulse(direction * knockback, result.collider.to_local(result.position))
+		return shotData
 		#Add more later
 	#var bullet = bulletScene.instantiate()
 	#get_tree().current_scene.add_child(bullet)
-	
+	return {}
+
+func createLine(shotData : Dictionary) -> void:
+	var weaponLine = load("res://WeaponLine.tscn")
+	var instance = weaponLine.instantiate()
+	var gradient = Gradient.new()
+	gradient.colors = [
+		Color(0.27, 0.27, 0.27, 0.4),
+		Color(0.4, 0.4, 0.4, 0.4)
+	]
+	gradient.offsets = [0.0, 1.0]
+	instance.gradient = gradient
+	instance.add_point(shotData.startPoint)   
+	instance.add_point(shotData.endPoint) 
+	get_tree().current_scene.add_child(instance)
+	deleteLine(instance)
+
+func deleteLine(instance) -> void:
+	await get_tree().create_timer(0.1).timeout
+	instance.queue_free()
+
 func _ready() -> void:
 	weapon_name = "Revolver"
 	ammo = 6
@@ -44,4 +74,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("player1_powerup"):
 		print("shot")
-		fire()
+		use()
