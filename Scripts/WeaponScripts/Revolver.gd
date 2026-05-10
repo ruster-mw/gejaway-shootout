@@ -15,6 +15,8 @@ extends BaseWeapon
 }
 @onready var muzzlePoint = $MuzzlePoint
 
+# an empty comment
+
 func fire() -> Dictionary:
 	var space_state = get_world_2d().direct_space_state
 	var origin = muzzlePoint.global_position
