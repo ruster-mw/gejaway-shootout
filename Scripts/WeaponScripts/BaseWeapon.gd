@@ -5,29 +5,47 @@ signal pickedUp(weapon)
 signal used
 signal exhausted  
 
-@export var ammo: int = 1
-@export var weapon_name: String = ""
+@export var ammo : int = 1
+@export var weaponName : String = ""
+@export var cooldown : float = 0
+@export var maxCooldown : float = 0
 
 var holder: RigidBody2D
-var is_held: bool = false
+var isHeld: bool = false
 
-func pick_up(player: RigidBody2D) -> void:
+func pickUp(player: RigidBody2D) -> void:
 	holder = player
-	is_held = true
+	isHeld = true
 	pickedUp.emit(self)
-	on_picked_up()
+	onPickedUp()
 
 func use() -> void:
-	if ammo <= 0:
+	if ammo <= 0 || cooldown > 0:
 		return
+	cooldown = maxCooldown
 	ammo -= 1
 	used.emit()
 	fire()
 	if ammo <= 0:
 		exhausted.emit()
+		print("out of ammo")
+		deleteGun()
 
-func on_picked_up() -> void:
+func onPickedUp() -> void:
 	pass
 
 func fire() -> Dictionary:
 	return {}
+
+func deleteGun(time : float = 1.25) -> void:
+	await get_tree().create_timer(time).timeout
+	queue_free()
+
+func _process(delta: float) -> void:
+	if cooldown > 0:
+		cooldown -= delta
+		print(cooldown)
+	if Input.is_action_just_pressed("player1_powerup"):
+		print("shot")
+		use()
+	

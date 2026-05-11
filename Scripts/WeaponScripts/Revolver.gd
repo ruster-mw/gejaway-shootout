@@ -1,13 +1,14 @@
 class_name Revolver
 extends BaseWeapon
 
+
 @export var bulletScene: PackedScene
 @export var bulletSpeed : float  = 1200.0
 @export var bulletSpread : float = 0.05
 @export var bulletDamage : float = 30
 @export var knockback : float = 200
 @export var bulletRange : float = 900
-@export var falloff : float = 0.1
+@export var falloff : float = 0.05
 @export var shotData : Dictionary = {
 	"distance" : null,
 	"startPoint" : null,
@@ -55,8 +56,8 @@ func createLine(shotData : Dictionary) -> void:
 	var instance = weaponLine.instantiate()
 	var gradient = Gradient.new()
 	gradient.colors = [
-		Color(0.27, 0.27, 0.27, 0.4),
-		Color(0.4, 0.4, 0.4, 0.4)
+		Color(0.4, 0.4, 0.4, 1.0),
+		Color(0.525, 0.525, 0.525, 1.0)
 	]
 	gradient.offsets = [0.0, 1.0]
 	instance.gradient = gradient
@@ -66,14 +67,19 @@ func createLine(shotData : Dictionary) -> void:
 	deleteLine(instance)
 
 func deleteLine(instance) -> void:
-	await get_tree().create_timer(0.1).timeout
+	var elapsed = 0.0
+	var duration = 0.3
+	while elapsed < duration:
+		elapsed += get_process_delta_time()
+		instance.modulate.a = lerpf(1.0, 0.0, elapsed / duration)
+		await get_tree().process_frame
 	instance.queue_free()
 
 func _ready() -> void:
-	weapon_name = "Revolver"
+	weaponName = "Revolver"
 	ammo = 6
+	maxCooldown = 0.3
 	
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("player1_powerup"):
-		print("shot")
-		use()
+
+	
+	

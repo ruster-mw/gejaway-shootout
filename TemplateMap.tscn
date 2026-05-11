@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://gs1wqogwhfma" path="res://GameObjects/DeathArea.tscn" id="3_i3itl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jicg0"]
-size = Vector2(1662, 99)
+size = Vector2(6325, 99)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t84c5"]
 size = Vector2(145, 556)
@@ -34,7 +34,7 @@ position = Vector2(1199, 75)
 metadata/_edit_group_ = true
 
 [node name="DeathArea" parent="Foreground" unique_id=1926885651 instance=ExtResource("3_i3itl")]
-position = Vector2(-243, 644)
+position = Vector2(-12, 85)
 metadata/_edit_group_ = true
 
 [node name="Floor" type="StaticBody2D" parent="Foreground" unique_id=612662242]
@@ -42,16 +42,16 @@ position = Vector2(580, 611)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground/Floor" unique_id=1782652164]
-position = Vector2(53.00006, -14.999994)
-scale = Vector2(103.62499, 6.25)
+position = Vector2(-19.4999, -14.999994)
+scale = Vector2(394.4375, 6.25)
 texture = ExtResource("1_mppcb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Foreground/Floor" unique_id=453344896]
-position = Vector2(52, -14.5)
+position = Vector2(-7.5, -14.5)
 shape = SubResource("RectangleShape2D_jicg0")
 
 [node name="Floor2" type="StaticBody2D" parent="Foreground" unique_id=2040957981]
-position = Vector2(-383, 370)
+position = Vector2(-217, -186)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Foreground/Floor2" unique_id=254004831]
