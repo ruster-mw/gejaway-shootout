@@ -20,13 +20,13 @@ size = Vector2(18, 65)
 
 [node name="Player" type="RigidBody2D" unique_id=1774049121 groups=["camera_objects", "players"]]
 visibility_layer = 513
+z_index = 10
 position = Vector2(339, 204)
 physics_material_override = SubResource("PhysicsMaterial_kne1u")
 gravity_scale = 1.5
 contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_kne1u")
-metadata/_edit_group_ = true
 
 [node name="HealthSystem" type="Node" parent="." unique_id=1839058452]
 script = ExtResource("2_kne1u")
@@ -44,19 +44,20 @@ debug_color = Color(0, 0.6, 0.7019608, 0.12156863)
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1538836306]
 z_index = 9
-position = Vector2(-2, -26)
 scale = Vector2(1.355, 1.355)
 texture = SubResource("CompressedTexture2D_kpjcp")
+offset = Vector2(0, -19)
 region_enabled = true
 region_rect = Rect2(8, 16, 48, 136)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2044056091]
-position = Vector2(-4.9999924, -58.000008)
+position = Vector2(-5, -58)
 node_a = NodePath("../Arm")
 node_b = NodePath("..")
 
 [node name="Arm" type="RigidBody2D" parent="." unique_id=551607651]
 visibility_layer = 1025
+z_index = 20
 collision_layer = 0
 collision_mask = 0
 mass = 0.01
@@ -67,7 +68,6 @@ angular_damp = 0.05
 position = Vector2(-5, 2)
 
 [node name="ArmSprite" type="Sprite2D" parent="Arm" unique_id=341076305]
-z_index = 10
 position = Vector2(-5, -26)
 scale = Vector2(1.355, 1.355)
 texture = ExtResource("2_kpjcp")

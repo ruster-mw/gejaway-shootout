@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cuw7ck48g4pgp"]
+
+[ext_resource type="Script" uid="uid://bmnh70ty38pys" path="res://Resources/WeaponData.gd" id="1_kw23u"]
+[ext_resource type="PackedScene" uid="uid://bsbr7rabhgu6g" path="res://Revolver.tscn" id="2_uti1c"]
+[ext_resource type="Texture2D" uid="uid://d3yydknje168d" path="res://Assets/PowerUps/revolver.png" id="3_g4p7q"]
+
+[resource]
+script = ExtResource("1_kw23u")
+weaponScene = ExtResource("2_uti1c")
+weaponSprite = ExtResource("3_g4p7q")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"

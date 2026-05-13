@@ -7,8 +7,11 @@
 script = ExtResource("1_8lx1p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1834806780]
-scale = Vector2(2.5, 2.5)
+visibility_layer = 513
+z_index = 30
+rotation = 1.5707964
+scale = Vector2(2.5, -2.5)
 texture = ExtResource("2_l747f")
 
 [node name="MuzzlePoint" type="Node2D" parent="." unique_id=226228691]
-position = Vector2(25, -8)
+position = Vector2(-8, 23)

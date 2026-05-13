@@ -21,7 +21,7 @@ extends BaseWeapon
 func fire() -> Dictionary:
 	var space_state = get_world_2d().direct_space_state
 	var origin = muzzlePoint.global_position
-	var direction = Vector2.RIGHT.rotated(global_rotation)  
+	var direction = Vector2.DOWN.rotated(global_rotation)  
 	var end = origin + direction * bulletRange
 	var query = PhysicsRayQueryParameters2D.create(origin, end)
 	query.collision_mask = 0b00000101  # hits layers 1 and 3
@@ -77,7 +77,7 @@ func deleteLine(instance) -> void:
 
 func _ready() -> void:
 	weaponName = "Revolver"
-	ammo = 6
+	ammo = 60
 	maxCooldown = 0.3
 	
 

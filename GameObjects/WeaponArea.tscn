@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dtb3uvwn8wurj"]
+
+[ext_resource type="Script" uid="uid://byvf6y3ol5lac" path="res://Scripts/ObjectsScripts/WeaponArea.gd" id="1_gic50"]
+[ext_resource type="Script" uid="uid://bmnh70ty38pys" path="res://Resources/WeaponData.gd" id="2_imn2x"]
+[ext_resource type="PackedScene" uid="uid://bsbr7rabhgu6g" path="res://Revolver.tscn" id="3_ics84"]
+[ext_resource type="Texture2D" uid="uid://d3yydknje168d" path="res://Assets/PowerUps/revolver.png" id="4_d2exo"]
+
+[sub_resource type="Resource" id="Resource_gbttm"]
+script = ExtResource("2_imn2x")
+weaponScene = ExtResource("3_ics84")
+weaponSprite = ExtResource("4_d2exo")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"
+
+[sub_resource type="Resource" id="Resource_ics84"]
+script = ExtResource("2_imn2x")
+weaponScene = ExtResource("3_ics84")
+weaponSprite = ExtResource("4_d2exo")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq4xy"]
+size = Vector2(190, 190)
+
+[node name="WeaponArea" type="Area2D" unique_id=1624108469]
+script = ExtResource("1_gic50")
+weaponPool = Array[ExtResource("2_imn2x")]([SubResource("Resource_gbttm"), SubResource("Resource_ics84")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2036899259]
+shape = SubResource("RectangleShape2D_vq4xy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=378656142]
+scale = Vector2(2.5, 2.5)

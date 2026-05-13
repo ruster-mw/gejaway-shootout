@@ -13,6 +13,8 @@ signal died(player: RigidBody2D)
 @onready var rightFloorRayCast : RayCast2D = $RightFloorRayCast
 @onready var shapeCase : ShapeCast2D  = $FloorShapeCast
 @onready var health: HealthSystem = $HealthSystem
+@onready var holdingSpot : Marker2D = $Arm/HoldingPoint
+@onready var joint : PinJoint2D = $PinJoint2D
 
 var facingRight : bool = true
 var getrotation : float = 0.0
@@ -55,6 +57,8 @@ func _startTurn(turningRight : bool) -> void:
 	lock_rotation = true
 	turnRight = turningRight
 	isTurning = true
+	_handleVisuals()
+	
 
 func _turn(delta : float) -> void:
 	turningTime += delta
@@ -80,10 +84,12 @@ func jump(jumpRight : bool) -> void:
 	isTurning = false
 	lock_rotation = false
 	turningTime = 0
+	
 
 func _handleVisuals() -> void:
 	sprite.flip_h = !turnRight
 	armSprite.flip_h = !turnRight
+	
 
 func die() -> void:
 	print("%d died" % player_id)
@@ -116,13 +122,18 @@ func disable() -> void:
 	rotation = 0
 	
 
-
 func takeDamage(amount : float) -> void:
 	print("%d took damage %d" % [player_id,amount])
+
+func addWeapon(weapon : Node2D):
+	$Arm.add_child(weapon)
+	weapon.position = holdingSpot.position
+	weapon.pickUp(self)
 
 func _ready() -> void:	
 	health.died.connect(die)
 	health.damaged.connect(takeDamage)
+	_handleVisuals()
 
 func _process(delta: float) -> void:
 	var left = "player%d_move_left" % player_id
@@ -148,7 +159,6 @@ func _physics_process(delta: float) -> void:
 		_balance(delta)
 	#inContact = false
 	#_handleInput()
-	_handleVisuals()
 	
 	
 	

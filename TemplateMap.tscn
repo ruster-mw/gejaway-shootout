@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dhgnb5edk74x2" path="res://Assets/Maps/TemplateMap/groundPlatform.png" id="1_mppcb"]
 [ext_resource type="Texture2D" uid="uid://b3oiycm2p0ybm" path="res://Assets/Maps/TemplateMap/box.png" id="2_i3itl"]
 [ext_resource type="PackedScene" uid="uid://gs1wqogwhfma" path="res://GameObjects/DeathArea.tscn" id="3_i3itl"]
+[ext_resource type="PackedScene" uid="uid://dtb3uvwn8wurj" path="res://GameObjects/WeaponArea.tscn" id="5_t84c5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jicg0"]
 size = Vector2(6325, 99)
@@ -34,7 +35,7 @@ position = Vector2(1199, 75)
 metadata/_edit_group_ = true
 
 [node name="DeathArea" parent="Foreground" unique_id=1926885651 instance=ExtResource("3_i3itl")]
-position = Vector2(-12, 85)
+position = Vector2(723, 23)
 metadata/_edit_group_ = true
 
 [node name="Floor" type="StaticBody2D" parent="Foreground" unique_id=612662242]
@@ -113,6 +114,9 @@ texture = ExtResource("2_i3itl")
 shape = SubResource("RectangleShape2D_g4isi")
 
 [node name="Background" type="Node" parent="." unique_id=1399135726]
+
+[node name="WeaponArea" parent="." unique_id=1624108469 instance=ExtResource("5_t84c5")]
+position = Vector2(-413, 421)
 
 [editable path="Foreground/DamageArea"]
 [editable path="Foreground/DeathArea"]

@@ -9,6 +9,7 @@ signal exhausted
 @export var weaponName : String = ""
 @export var cooldown : float = 0
 @export var maxCooldown : float = 0
+@export var automatic : bool = false
 
 var holder: RigidBody2D
 var isHeld: bool = false
@@ -44,8 +45,7 @@ func deleteGun(time : float = 1.25) -> void:
 func _process(delta: float) -> void:
 	if cooldown > 0:
 		cooldown -= delta
-		print(cooldown)
-	if Input.is_action_just_pressed("player1_powerup"):
-		print("shot")
+	var pressed = Input.is_action_pressed("player1_powerup") if automatic else Input.is_action_just_pressed("player1_powerup")
+	if pressed:
 		use()
 	
