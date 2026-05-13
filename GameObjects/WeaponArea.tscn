@@ -18,7 +18,7 @@ weaponSprite = ExtResource("4_d2exo")
 metadata/_custom_type_script = "uid://bmnh70ty38pys"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vq4xy"]
-size = Vector2(190, 190)
+size = Vector2(108, 48)
 
 [node name="WeaponArea" type="Area2D" unique_id=1624108469]
 script = ExtResource("1_gic50")

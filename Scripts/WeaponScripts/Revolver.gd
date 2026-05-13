@@ -77,7 +77,7 @@ func deleteLine(instance) -> void:
 
 func _ready() -> void:
 	weaponName = "Revolver"
-	ammo = 60
+	ammo = 6
 	maxCooldown = 0.3
 	
 

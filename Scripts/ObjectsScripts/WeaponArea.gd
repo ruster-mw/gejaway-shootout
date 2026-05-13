@@ -28,6 +28,9 @@ func onBodyEntered(body : Node) -> void:
 	if not rolledWeapon:
 		return
 	if body.is_in_group("players"):
+		for child in body.find_children("*", "BaseWeapon", true, false):
+			if child is BaseWeapon:
+				return
 		var weapon = rolledWeapon.weaponScene.instantiate()
 		body.addWeapon(weapon)
 		return

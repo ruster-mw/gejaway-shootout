@@ -1,4 +1,5 @@
 [gd_scene format=3 uid="uid://bdgsvfgx6lq01"]
 
 [node name="WeaponLine" type="Line2D" unique_id=1141082297]
+z_index = 30
 width = 4.0

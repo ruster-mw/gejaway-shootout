@@ -25,8 +25,11 @@ var maxTurnSpeed : float = 280
 var jumpPower : float = 1100.0
 var lerpTurnTime : float = 0.5
 var jumpCoolDown = 0.05
-
 var jumpTime : float = 0.05
+var left
+var right
+var powerup
+
 
 var turningTime : float
 var unbalanacedTime : float
@@ -34,7 +37,7 @@ var inContact : bool = false
 var isTurning : bool
 var turnRight : bool = true
 var hasAppliedDamp : bool
-
+var automaticWeapon : bool
 
 func _balance(delta : float) -> void:
 	getrotation = rotation_degrees
@@ -126,18 +129,22 @@ func takeDamage(amount : float) -> void:
 	print("%d took damage %d" % [player_id,amount])
 
 func addWeapon(weapon : Node2D):
+	print("picked up a weapon")
 	$Arm.add_child(weapon)
 	weapon.position = holdingSpot.position
 	weapon.pickUp(self)
+	automaticWeapon = weapon.automatic
 
 func _ready() -> void:	
 	health.died.connect(die)
 	health.damaged.connect(takeDamage)
 	_handleVisuals()
+	left = "player%d_move_left" % player_id
+	right = "player%d_move_right" % player_id
+	powerup = "player%d_powerup" % player_id
 
 func _process(delta: float) -> void:
-	var left = "player%d_move_left" % player_id
-	var right = "player%d_move_right" % player_id
+	
 	if Input.is_action_pressed(left):
 		_startTurn(false)
 	elif Input.is_action_pressed(right):
@@ -147,6 +154,10 @@ func _process(delta: float) -> void:
 		jump(false)
 	elif Input.is_action_just_released(right):
 		jump(true)
+		
+	if Input.is_action_pressed(powerup) if automaticWeapon else Input.is_action_just_pressed(powerup):
+		for child in find_children("*", "BaseWeapon", true, false):
+			child.use()
 	
 
 func _physics_process(delta: float) -> void:
