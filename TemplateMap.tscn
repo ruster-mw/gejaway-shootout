@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://b3oiycm2p0ybm" path="res://Assets/Maps/TemplateMap/box.png" id="2_i3itl"]
 [ext_resource type="PackedScene" uid="uid://gs1wqogwhfma" path="res://GameObjects/DeathArea.tscn" id="3_i3itl"]
 [ext_resource type="PackedScene" uid="uid://dtb3uvwn8wurj" path="res://GameObjects/WeaponArea.tscn" id="5_t84c5"]
+[ext_resource type="Script" uid="uid://bmnh70ty38pys" path="res://Resources/WeaponData.gd" id="6_biwu2"]
+[ext_resource type="PackedScene" uid="uid://bsbr7rabhgu6g" path="res://Revolver.tscn" id="7_xnwy6"]
+[ext_resource type="Texture2D" uid="uid://d3yydknje168d" path="res://Assets/PowerUps/revolver.png" id="8_e4e7i"]
+[ext_resource type="Resource" uid="uid://qigy075h7rdx" path="res://Resources/Sniper.tres" id="9_y6ckt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jicg0"]
 size = Vector2(6325, 99)
@@ -25,6 +29,12 @@ size = Vector2(1651, 86.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4isi"]
 size = Vector2(187.25, 159)
+
+[sub_resource type="Resource" id="Resource_gbttm"]
+script = ExtResource("6_biwu2")
+weaponScene = ExtResource("7_xnwy6")
+weaponSprite = ExtResource("8_e4e7i")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"
 
 [node name="TemplateMap" type="Node2D" unique_id=551165929]
 
@@ -116,7 +126,20 @@ shape = SubResource("RectangleShape2D_g4isi")
 [node name="Background" type="Node" parent="." unique_id=1399135726]
 
 [node name="WeaponArea" parent="." unique_id=1624108469 instance=ExtResource("5_t84c5")]
-position = Vector2(-413, 421)
+position = Vector2(-914, 449)
+weaponPool = Array[ExtResource("6_biwu2")]([SubResource("Resource_gbttm")])
+
+[node name="WeaponArea2" parent="." unique_id=341163195 instance=ExtResource("5_t84c5")]
+position = Vector2(-533, 449)
+weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("9_y6ckt")])
+
+[node name="WeaponArea3" parent="." unique_id=1597411748 instance=ExtResource("5_t84c5")]
+position = Vector2(-1558, 444)
+weaponPool = Array[ExtResource("6_biwu2")]([SubResource("Resource_gbttm"), ExtResource("9_y6ckt")])
+
+[node name="WeaponArea4" parent="." unique_id=969666691 instance=ExtResource("5_t84c5")]
+position = Vector2(-1240, 440)
+weaponPool = Array[ExtResource("6_biwu2")]([SubResource("Resource_gbttm"), ExtResource("9_y6ckt")])
 
 [editable path="Foreground/DamageArea"]
 [editable path="Foreground/DeathArea"]

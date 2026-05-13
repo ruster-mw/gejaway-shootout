@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://qigy075h7rdx"]
+
+[ext_resource type="Script" uid="uid://bmnh70ty38pys" path="res://Resources/WeaponData.gd" id="1_dnb2r"]
+[ext_resource type="PackedScene" uid="uid://bbe4i0ueuf2y1" path="res://Sniper.tscn" id="2_5v47q"]
+[ext_resource type="Texture2D" uid="uid://i7hqafr13w6" path="res://Assets/PowerUps/sniper_rifle.png" id="3_fy2ah"]
+
+[resource]
+script = ExtResource("1_dnb2r")
+weaponScene = ExtResource("2_5v47q")
+weaponSprite = ExtResource("3_fy2ah")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"

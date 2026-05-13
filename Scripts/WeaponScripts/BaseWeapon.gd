@@ -7,7 +7,7 @@ signal exhausted
 
 @export var ammo : int = 1
 @export var weaponName : String = ""
-@export var cooldown : float = 0
+var cooldown : float = 0
 @export var maxCooldown : float = 0
 @export var automatic : bool = false
 @export var pressed : bool = false

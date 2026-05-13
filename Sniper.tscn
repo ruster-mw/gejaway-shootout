@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bbe4i0ueuf2y1"]
+
+[ext_resource type="Script" uid="uid://cfttk6hguhkuy" path="res://Scripts/WeaponScripts/Sniper.gd" id="1_s7dwn"]
+[ext_resource type="Texture2D" uid="uid://bnm22s3bkr5j8" path="res://Assets/PowerUps/thunder_rod.png" id="2_s7dwn"]
+
+[node name="Sniper" type="Node2D" unique_id=1084593747]
+script = ExtResource("1_s7dwn")
+ammo = 2
+weaponName = "Sniper"
+maxCooldown = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=842270415]
+visibility_layer = 513
+z_index = 30
+rotation = 1.5707964
+scale = Vector2(2.5, -2.5)
+texture = ExtResource("2_s7dwn")
+
+[node name="MuzzlePoint" type="Node2D" parent="." unique_id=902566757]
+position = Vector2(-1, 49)
