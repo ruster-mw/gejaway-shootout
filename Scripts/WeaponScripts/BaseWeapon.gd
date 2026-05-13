@@ -31,7 +31,6 @@ func use() -> void:
 	fire()
 	if ammo <= 0:
 		exhausted.emit()
-		print("out of ammo")
 		deleteGun()
 
 func onPickedUp() -> void:
@@ -40,7 +39,7 @@ func onPickedUp() -> void:
 func fire() -> Dictionary:
 	return {}
 
-func deleteGun(time : float = 1.25) -> void:
+func deleteGun(time : float = 0.5) -> void:
 	await get_tree().create_timer(time).timeout
 	queue_free()
 

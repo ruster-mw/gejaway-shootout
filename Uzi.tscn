@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://pnab1gg4m718"]
+
+[ext_resource type="Script" uid="uid://b21flpb86n234" path="res://Scripts/WeaponScripts/Uzi.gd" id="1_fva6l"]
+[ext_resource type="Texture2D" uid="uid://dmjpbp2dsukii" path="res://Assets/PowerUps/uzi.png" id="2_ips0y"]
+
+[node name="Uzi" type="Node2D" unique_id=358605009]
+script = ExtResource("1_fva6l")
+bulletSpeed = 1000.0
+bulletSpread = 10.0
+bulletDamage = 6.0
+knockback = 50.0
+bulletRange = 800.0
+falloff = 0.05
+ammo = 17
+weaponName = "Uzi"
+maxCooldown = 0.15
+automatic = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=835501110]
+visibility_layer = 513
+z_index = 30
+rotation = 1.5707964
+scale = Vector2(2.5, -2.5)
+texture = ExtResource("2_ips0y")
+
+[node name="MuzzlePoint" type="Node2D" parent="." unique_id=665247675]
+position = Vector2(-10, 33)

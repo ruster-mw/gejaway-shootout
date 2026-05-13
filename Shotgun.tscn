@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bfqq64l6rcrxh"]
+
+[ext_resource type="Script" uid="uid://cwgncj0nqtkf1" path="res://Scripts/WeaponScripts/Shotgun.gd" id="1_p6k6k"]
+[ext_resource type="Texture2D" uid="uid://ldkj1obfpgim" path="res://Assets/PowerUps/pump.png" id="2_crxyp"]
+
+[node name="Shotgun" type="Node2D" unique_id=1091640336]
+script = ExtResource("1_p6k6k")
+bulletSpeed = 700.0
+bulletSpread = 6.0
+bulletDamage = 110.0
+knockback = 600.0
+bulletRange = 700.0
+falloff = 0.005
+ammo = 30
+weaponName = "Shotgun"
+maxCooldown = 0.5
+automatic = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=870541471]
+visibility_layer = 513
+z_index = 30
+rotation = 1.5707964
+scale = Vector2(2.5, -2.5)
+texture = ExtResource("2_crxyp")
+
+[node name="MuzzlePoint" type="Node2D" parent="." unique_id=1434083854]
+position = Vector2(-13, 46)

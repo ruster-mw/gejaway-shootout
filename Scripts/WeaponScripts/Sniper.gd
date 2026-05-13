@@ -3,12 +3,12 @@ extends BaseWeapon
 
 
 @export var bulletScene: PackedScene
-@export var bulletSpeed : float  = 1200.0
-@export var bulletSpread : float = 0.05
-@export var bulletDamage : float = 30
-@export var knockback : float = 200
-@export var bulletRange : float = 900
-@export var falloff : float = 0.05
+@export var bulletSpeed : float  
+@export var bulletSpread : float 
+@export var bulletDamage : float 
+@export var knockback : float
+@export var bulletRange : float 
+@export var falloff : float
 @export var shotData : Dictionary = {
 	"distance" : null,
 	"startPoint" : null,
@@ -21,7 +21,8 @@ extends BaseWeapon
 func fire() -> Dictionary:
 	var space_state = get_world_2d().direct_space_state
 	var origin = muzzlePoint.global_position
-	var direction = Vector2.DOWN.rotated(global_rotation)  
+	var spreadAngle = deg_to_rad(randf_range(-bulletSpread, bulletSpread))
+	var direction = Vector2.DOWN.rotated(global_rotation + spreadAngle)  
 	var end = origin + direction * bulletRange
 	var query = PhysicsRayQueryParameters2D.create(origin, end)
 	query.collision_mask = 0b00000101  # hits layers 1 and 3
@@ -43,7 +44,6 @@ func fire() -> Dictionary:
 			var finalDamage = max(0, bulletDamage - (rangePercent * falloff))
 			health.takeDamage(finalDamage)
 		if result.collider is RigidBody2D:	
-			print("applied knockback")
 			result.collider.apply_impulse(direction * knockback, result.collider.to_local(result.position))
 		return shotData
 		#Add more later
@@ -76,9 +76,7 @@ func deleteLine(instance) -> void:
 	instance.queue_free()
 
 func _ready() -> void:
-	weaponName = "Sniper"
-	ammo = 6
-	maxCooldown = 0.3
+	pass
 	
 
 	

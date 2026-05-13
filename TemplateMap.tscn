@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bsbr7rabhgu6g" path="res://Revolver.tscn" id="7_xnwy6"]
 [ext_resource type="Texture2D" uid="uid://d3yydknje168d" path="res://Assets/PowerUps/revolver.png" id="8_e4e7i"]
 [ext_resource type="Resource" uid="uid://qigy075h7rdx" path="res://Resources/Sniper.tres" id="9_y6ckt"]
+[ext_resource type="Resource" uid="uid://5t50bxj3fyqv" path="res://Resources/Shotgun.tres" id="10_e4e7i"]
+[ext_resource type="Resource" uid="uid://dsdj1bchjl15o" path="res://Resources/Uzi.tres" id="10_xnwy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jicg0"]
 size = Vector2(6325, 99)
@@ -135,11 +137,11 @@ weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("9_y6ckt")])
 
 [node name="WeaponArea3" parent="." unique_id=1597411748 instance=ExtResource("5_t84c5")]
 position = Vector2(-1558, 444)
-weaponPool = Array[ExtResource("6_biwu2")]([SubResource("Resource_gbttm"), ExtResource("9_y6ckt")])
+weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("10_e4e7i")])
 
 [node name="WeaponArea4" parent="." unique_id=969666691 instance=ExtResource("5_t84c5")]
 position = Vector2(-1240, 440)
-weaponPool = Array[ExtResource("6_biwu2")]([SubResource("Resource_gbttm"), ExtResource("9_y6ckt")])
+weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("10_xnwy6")])
 
 [editable path="Foreground/DamageArea"]
 [editable path="Foreground/DeathArea"]

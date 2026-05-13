@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://5t50bxj3fyqv"]
+
+[ext_resource type="Script" uid="uid://bmnh70ty38pys" path="res://Resources/WeaponData.gd" id="1_lp3fo"]
+[ext_resource type="PackedScene" uid="uid://bfqq64l6rcrxh" path="res://Shotgun.tscn" id="2_bfw26"]
+[ext_resource type="Texture2D" uid="uid://ldkj1obfpgim" path="res://Assets/PowerUps/pump.png" id="3_6xlu5"]
+
+[resource]
+script = ExtResource("1_lp3fo")
+weaponScene = ExtResource("2_bfw26")
+weaponSprite = ExtResource("3_6xlu5")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"

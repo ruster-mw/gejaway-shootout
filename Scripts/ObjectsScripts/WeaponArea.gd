@@ -8,17 +8,11 @@ var rolledWeapon : WeaponData
 
 
 func rollWeapon() -> void:
-	print("pool size: ", weaponPool.size())
-	for i in weaponPool.size():
-		print(i, ": ", weaponPool[i])
-
 	if not rolledWeapon:
 		rolledWeapon = weaponPool.pick_random()
 		sprite.texture = rolledWeapon.weaponSprite
 
 func _ready() -> void:
-	print("running node: ", get_path())
-	print("pool size: ", weaponPool.size())
 	body_entered.connect(onBodyEntered)
 	rollWeapon()
 	
