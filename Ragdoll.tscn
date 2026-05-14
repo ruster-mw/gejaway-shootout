@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbygdaqb0wbk8"]
 
 [ext_resource type="Script" uid="uid://b4pxr4f8bsu3j" path="res://Scripts/PlayerScripts/Ragdoll.gd" id="1_mndxs"]
-[ext_resource type="Texture2D" uid="uid://ddd0auehllksg" path="res://Assets/Players/bully.png" id="2_ek0f2"]
+[ext_resource type="Texture2D" uid="uid://22soq046sy7k" path="res://Assets/Players/goat.png" id="2_ek0f2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pm1gt"]
 size = Vector2(52, 173)
@@ -14,10 +14,10 @@ script = ExtResource("1_mndxs")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=198323385]
 z_index = 9
-scale = Vector2(2.7105262, 2.7105262)
+scale = Vector2(1.355, 1.355)
 texture = ExtResource("2_ek0f2")
 region_enabled = true
-region_rect = Rect2(4, 8, 24, 68)
+region_rect = Rect2(8, 16, 48, 136)
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1274220232]
 shape = SubResource("RectangleShape2D_pm1gt")
@@ -44,10 +44,10 @@ position = Vector2(-5, 2)
 [node name="ArmSprite" type="Sprite2D" parent="Arm" unique_id=1956207118]
 z_index = 10
 position = Vector2(-5, -26)
-scale = Vector2(2.9494731, 2.9494734)
+scale = Vector2(1.355, 1.355)
 texture = ExtResource("2_ek0f2")
 region_enabled = true
-region_rect = Rect2(31, 32, 8, 24)
+region_rect = Rect2(60, 62, 20, 52)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arm" unique_id=887440919]
 position = Vector2(-5, -26.5)

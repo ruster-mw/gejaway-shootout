@@ -100,6 +100,10 @@ func die() -> void:
 	disable()
 	var RagdollScene = load("res://Ragdoll.tscn")
 	var instance = RagdollScene.instantiate()
+	#for child in $Arm.get_children(): todo
+		#if child is BaseWeapon:
+			#remove_child(child)
+			#instance.addWeapon(child)
 	instance.rotation = rotation
 	instance.global_position = global_position
 	instance.linear_velocity = linear_velocity

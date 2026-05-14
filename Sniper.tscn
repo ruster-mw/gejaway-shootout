@@ -7,13 +7,13 @@
 script = ExtResource("1_s7dwn")
 bulletSpeed = 2000.0
 bulletSpread = 5.0
-bulletDamage = 40.0
+bulletDamage = 90.0
 knockback = 300.0
 bulletRange = 1300.0
-falloff = -1.2
+falloff = -0.5
 ammo = 2
 weaponName = "Sniper"
-maxCooldown = 1.0
+maxCooldown = 0.8
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=842270415]
 visibility_layer = 513

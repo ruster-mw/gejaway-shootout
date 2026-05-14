@@ -12,6 +12,10 @@ func rollWeapon() -> void:
 		rolledWeapon = weaponPool.pick_random()
 		sprite.texture = rolledWeapon.weaponSprite
 
+func roll() -> void:
+	await get_tree().create_timer(5.5).timeout
+	rollWeapon()
+
 func _ready() -> void:
 	body_entered.connect(onBodyEntered)
 	rollWeapon()
@@ -27,6 +31,9 @@ func onBodyEntered(body : Node) -> void:
 				return
 		var weapon = rolledWeapon.weaponScene.instantiate()
 		body.addWeapon(weapon)
+		rolledWeapon = null
+		sprite.texture = null
+		roll()
 		return
 	print("no player found")
 	

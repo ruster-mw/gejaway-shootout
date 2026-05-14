@@ -4,6 +4,7 @@ extends RigidBody2D
 
 @onready var sprite : Sprite2D  = $Body
 @onready var armSprite : Sprite2D = $Arm/ArmSprite
+@onready var holdingSpot : Marker2D = $Arm/HoldingPoint
 
 func _handleVisuals() -> void:
 	sprite.flip_h = !turnRight
@@ -21,3 +22,9 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:
 	_handleVisuals()
+
+func addWeapon(weapon : Node2D):
+	print("picked up a weapon")
+	$Arm.add_child(weapon)
+	weapon.position = holdingSpot.position
+	weapon.pickUp(self)
