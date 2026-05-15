@@ -97,7 +97,9 @@ func _handleVisuals() -> void:
 	sprite.flip_h = !turnRight
 	armSprite.flip_h = !turnRight
 	if currentWeapon:
-		currentWeapon.scale.x = -absf(currentWeapon.scale.x) if !turnRight else absf(currentWeapon.scale.x )
+		var weaponSprite = currentWeapon.get_node("Sprite2D")
+		weaponSprite.scale.y = -absf(weaponSprite.scale.y) if !turnRight else absf(weaponSprite.scale.y)
+		currentWeapon.muzzlePoint.position.x = -absf(currentWeapon.muzzlePoint.position.x) if !turnRight else absf(currentWeapon.muzzlePoint.position.x)
 	#var direction = 1 if turnRight else -1
 	#$Arm.position = Vector2(armPosition.x * direction, armPosition.y)
 	#$PinJoint2D.position = Vector2(jointPosition.x * direction, jointPosition.y)
@@ -109,9 +111,10 @@ func die() -> void:
 	disable()
 	var RagdollScene = load("res://Ragdoll.tscn")
 	var instance = RagdollScene.instantiate()
-	#for child in $Arm.get_children(): todo
-		#if child is BaseWeapon:
-			#remove_child(child)
+	for child in $Arm.get_children(): 
+		if child is BaseWeapon:
+			print("removed weapon")
+			#remove_child(child) todo
 			#instance.addWeapon(child)
 	instance.rotation = rotation
 	instance.global_position = global_position

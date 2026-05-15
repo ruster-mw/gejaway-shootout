@@ -15,7 +15,7 @@ bulletRange = 1300.0
 falloff = -0.5
 ammo = 2
 weaponName = "Sniper"
-maxCooldown = 0.8
+maxCooldown = 0.6
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=842270415]
 visibility_layer = 513

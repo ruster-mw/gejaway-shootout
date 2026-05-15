@@ -3,6 +3,7 @@ extends Area2D
 @export var weaponPool : Array[WeaponData] = []
 
 @onready var sprite : Sprite2D = $Sprite2D
+@onready var sprite2 : Sprite2D = $Sprite2D2
 
 var rolledWeapon : WeaponData
 
@@ -11,6 +12,7 @@ func rollWeapon() -> void:
 	if not rolledWeapon:
 		rolledWeapon = weaponPool.pick_random()
 		sprite.texture = rolledWeapon.weaponSprite
+		sprite2.visible = true
 
 func roll() -> void:
 	await get_tree().create_timer(5.5).timeout
@@ -33,6 +35,7 @@ func onBodyEntered(body : Node) -> void:
 		body.addWeapon(weapon)
 		rolledWeapon = null
 		sprite.texture = null
+		sprite2.visible = false
 		roll()
 		return
 	print("no player found")
