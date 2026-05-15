@@ -8,7 +8,7 @@ extends BaseWeapon
 @export var bulletDamage : float = 30
 @export var knockback : float = 200
 @export var bulletRange : float = 900
-@export var falloff : float = 0.05
+@export var falloff : float = 0.0
 @export var shotData : Dictionary = {
 	"distance" : null,
 	"startPoint" : null,

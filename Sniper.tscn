@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://i7hqafr13w6" path="res://Assets/PowerUps/sniper_rifle.png" id="2_73jju"]
 
 [node name="Sniper" type="Node2D" unique_id=1084593747]
+z_index = 20
+z_as_relative = false
 script = ExtResource("1_s7dwn")
 bulletSpeed = 2000.0
 bulletSpread = 5.0
@@ -19,8 +21,8 @@ maxCooldown = 0.8
 visibility_layer = 513
 z_index = 30
 rotation = 1.5707964
-scale = Vector2(2.5, -2.5)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_73jju")
 
 [node name="MuzzlePoint" type="Node2D" parent="." unique_id=902566757]
-position = Vector2(-1, 49)
+position = Vector2(1, 49)

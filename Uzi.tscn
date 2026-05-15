@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dmjpbp2dsukii" path="res://Assets/PowerUps/uzi.png" id="2_ips0y"]
 
 [node name="Uzi" type="Node2D" unique_id=358605009]
+z_index = 20
+z_as_relative = false
 script = ExtResource("1_fva6l")
 bulletSpeed = 1000.0
 bulletSpread = 10.0
@@ -20,8 +22,8 @@ automatic = true
 visibility_layer = 513
 z_index = 30
 rotation = 1.5707964
-scale = Vector2(2.5, -2.5)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_ips0y")
 
 [node name="MuzzlePoint" type="Node2D" parent="." unique_id=665247675]
-position = Vector2(-10, 33)
+position = Vector2(10, 33)

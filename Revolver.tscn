@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d3yydknje168d" path="res://Assets/PowerUps/revolver.png" id="2_l747f"]
 
 [node name="Revolver" type="Node2D" unique_id=1366969992]
+z_index = 20
+z_as_relative = false
 script = ExtResource("1_8lx1p")
 ammo = 6
 weaponName = "Revolver"
@@ -11,10 +13,9 @@ maxCooldown = 0.25
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1834806780]
 visibility_layer = 513
-z_index = 30
 rotation = 1.5707964
-scale = Vector2(2.5, -2.5)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_l747f")
 
 [node name="MuzzlePoint" type="Node2D" parent="." unique_id=226228691]
-position = Vector2(-8, 23)
+position = Vector2(8, 23)

@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ldkj1obfpgim" path="res://Assets/PowerUps/pump.png" id="2_crxyp"]
 
 [node name="Shotgun" type="Node2D" unique_id=1091640336]
+z_index = 20
+z_as_relative = false
 script = ExtResource("1_p6k6k")
 bulletSpeed = 700.0
 bulletSpread = 6.0
@@ -19,8 +21,8 @@ maxCooldown = 0.5
 visibility_layer = 513
 z_index = 30
 rotation = 1.5707964
-scale = Vector2(2.5, -2.5)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_crxyp")
 
 [node name="MuzzlePoint" type="Node2D" parent="." unique_id=1434083854]
-position = Vector2(-13, 46)
+position = Vector2(13, 46)

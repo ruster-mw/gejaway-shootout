@@ -15,6 +15,9 @@ signal died(player: RigidBody2D)
 @onready var health: HealthSystem = $HealthSystem
 @onready var holdingSpot : Marker2D = $Arm/HoldingPoint
 @onready var joint : PinJoint2D = $PinJoint2D
+@onready var armPosition = $Arm.position
+@onready var jointPosition = $PinJoint2D.position
+var currentWeapon : BaseWeapon = null
 
 var facingRight : bool = true
 var getrotation : float = 0.0
@@ -90,10 +93,16 @@ func jump(jumpRight : bool) -> void:
 	
 
 func _handleVisuals() -> void:
+
 	sprite.flip_h = !turnRight
 	armSprite.flip_h = !turnRight
+	if currentWeapon:
+		currentWeapon.scale.x = -absf(currentWeapon.scale.x) if !turnRight else absf(currentWeapon.scale.x )
+	#var direction = 1 if turnRight else -1
+	#$Arm.position = Vector2(armPosition.x * direction, armPosition.y)
+	#$PinJoint2D.position = Vector2(jointPosition.x * direction, jointPosition.y)
 	
-
+	
 func die() -> void:
 	print("%d died" % player_id)
 	died.emit(self)
@@ -138,7 +147,9 @@ func addWeapon(weapon : Node2D):
 	weapon.position = holdingSpot.position
 	weapon.pickUp(self)
 	automaticWeapon = weapon.automatic
-
+	currentWeapon = weapon
+	weapon.exhausted.connect(func(): currentWeapon = null)
+	
 func _ready() -> void:	
 	health.died.connect(die)
 	health.damaged.connect(takeDamage)
