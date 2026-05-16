@@ -33,6 +33,7 @@ z_index = 2
 scale = Vector2(2.5, 2.5)
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=53182016]
+modulate = Color(0.8745098, 0.90588236, 0.20784314, 1)
 z_index = 1
-scale = Vector2(1.875, 1.40625)
+scale = Vector2(1.2812499, 1.3124999)
 texture = ExtResource("5_d2exo")
