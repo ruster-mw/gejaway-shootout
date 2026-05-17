@@ -8,12 +8,11 @@ z_index = 20
 z_as_relative = false
 script = ExtResource("1_s7dwn")
 bulletSpeed = 2000.0
-bulletSpread = 5.0
 bulletDamage = 90.0
 knockback = 300.0
 bulletRange = 1300.0
 falloff = -0.5
-ammo = 2
+ammo = 30
 weaponName = "Sniper"
 maxCooldown = 0.6
 

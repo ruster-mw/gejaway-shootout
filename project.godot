@@ -29,6 +29,7 @@ project/assembly_name="GejawayShootOut"
 
 players=""
 camera_objects=""
+targetable=""
 
 [input]
 

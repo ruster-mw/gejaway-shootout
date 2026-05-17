@@ -43,11 +43,11 @@ metadata/_custom_type_script = "uid://bmnh70ty38pys"
 [node name="Foreground" type="Node" parent="." unique_id=1509358515]
 
 [node name="DamageArea" parent="Foreground" unique_id=1817635903 instance=ExtResource("1_jicg0")]
-position = Vector2(1199, 75)
+position = Vector2(2248, 65)
 metadata/_edit_group_ = true
 
 [node name="DeathArea" parent="Foreground" unique_id=1926885651 instance=ExtResource("3_i3itl")]
-position = Vector2(723, 23)
+position = Vector2(2004, 116)
 metadata/_edit_group_ = true
 
 [node name="Floor" type="StaticBody2D" parent="Foreground" unique_id=612662242]

@@ -4,7 +4,7 @@ extends BaseWeapon
 
 @export var bulletScene: PackedScene
 @export var bulletSpeed : float  = 1200.0
-@export var bulletSpread : float = 5
+@export var bulletSpread : float = 2
 @export var bulletDamage : float = 30
 @export var knockback : float = 200
 @export var bulletRange : float = 900

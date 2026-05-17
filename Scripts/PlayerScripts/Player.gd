@@ -93,7 +93,6 @@ func jump(jumpRight : bool) -> void:
 	
 
 func _handleVisuals() -> void:
-
 	sprite.flip_h = !turnRight
 	armSprite.flip_h = !turnRight
 	if currentWeapon:
@@ -119,7 +118,9 @@ func die() -> void:
 	instance.rotation = rotation
 	instance.global_position = global_position
 	instance.linear_velocity = linear_velocity
+	linear_velocity = Vector2.ZERO
 	instance.angular_velocity = angular_velocity
+	angular_velocity = 0
 	instance.get_node("Body").texture = get_node("Body").texture
 	instance.turnRight = turnRight
 	var arm_instance = instance.get_node("Arm")

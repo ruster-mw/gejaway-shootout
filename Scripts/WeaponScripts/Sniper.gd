@@ -68,7 +68,7 @@ func createLine(shotData : Dictionary) -> void:
 
 func deleteLine(instance) -> void:
 	var elapsed = 0.0
-	var duration = 0.3
+	var duration = 20
 	while elapsed < duration:
 		elapsed += get_process_delta_time()
 		instance.modulate.a = lerpf(1.0, 0.0, elapsed / duration)
