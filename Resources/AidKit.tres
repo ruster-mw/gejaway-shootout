@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cpmqfloqdy35j"]
+
+[ext_resource type="Script" uid="uid://bmnh70ty38pys" path="res://Resources/WeaponData.gd" id="1_3chd7"]
+[ext_resource type="PackedScene" uid="uid://uhe6y6ewnogn" path="res://AidKit.tscn" id="2_yuys6"]
+[ext_resource type="Texture2D" uid="uid://daptmani4eb8i" path="res://Assets/PowerUps/aidkit.png" id="3_h2arg"]
+
+[resource]
+script = ExtResource("1_3chd7")
+weaponScene = ExtResource("2_yuys6")
+weaponSprite = ExtResource("3_h2arg")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"

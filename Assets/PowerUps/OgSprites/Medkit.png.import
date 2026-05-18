@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y0ddxeiy7rr5"
-path="res://.godot/imported/ThrowingKnife.png-85f67bef4b1d68c5bfb4fc53c5093183.ctex"
+uid="uid://bt2bnlkye15cx"
+path="res://.godot/imported/Medkit.png-23c00db64c349ca692e95c59cac0d917.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PowerUps/ThrowingKnife.png"
-dest_files=["res://.godot/imported/ThrowingKnife.png-85f67bef4b1d68c5bfb4fc53c5093183.ctex"]
+source_file="res://Assets/PowerUps/OgSprites/Medkit.png"
+dest_files=["res://.godot/imported/Medkit.png-23c00db64c349ca692e95c59cac0d917.ctex"]
 
 [params]
 

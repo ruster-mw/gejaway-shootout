@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjy0e4c3xqkum"
-path="res://.godot/imported/SMG.png-b14a00b89b9351189417902fb7865b89.ctex"
+uid="uid://blrkmhhx6jvu6"
+path="res://.godot/imported/ThrowingKnife.png-2fd04844ea0aaeab23d34517ea7d92e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PowerUps/SMG.png"
-dest_files=["res://.godot/imported/SMG.png-b14a00b89b9351189417902fb7865b89.ctex"]
+source_file="res://Assets/PowerUps/OgSprites/ThrowingKnife.png"
+dest_files=["res://.godot/imported/ThrowingKnife.png-2fd04844ea0aaeab23d34517ea7d92e2.ctex"]
 
 [params]
 

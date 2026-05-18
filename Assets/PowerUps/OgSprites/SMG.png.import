@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xd18v86fa507"
-path="res://.godot/imported/RPG.png-a3c2ade23363d75e574f42e4c740f3fd.ctex"
+uid="uid://cfq1wpoywbgwo"
+path="res://.godot/imported/SMG.png-d6bf3704b2c5e23d29372da7e5a378e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PowerUps/RPG.png"
-dest_files=["res://.godot/imported/RPG.png-a3c2ade23363d75e574f42e4c740f3fd.ctex"]
+source_file="res://Assets/PowerUps/OgSprites/SMG.png"
+dest_files=["res://.godot/imported/SMG.png-d6bf3704b2c5e23d29372da7e5a378e0.ctex"]
 
 [params]
 

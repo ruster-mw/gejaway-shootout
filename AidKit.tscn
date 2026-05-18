@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://uhe6y6ewnogn"]
+
+[ext_resource type="Script" uid="uid://ccokxpq524b2b" path="res://Scripts/WeaponScripts/AidKit.gd" id="1_o6y63"]
+[ext_resource type="Texture2D" uid="uid://daptmani4eb8i" path="res://Assets/PowerUps/aidkit.png" id="2_4xy1x"]
+
+[node name="AidKit" type="Node2D" unique_id=345131362]
+z_index = 20
+z_as_relative = false
+script = ExtResource("1_o6y63")
+healing = 100.0
+weaponName = "Aid kit"
+maxCooldown = 0.4
+aim = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=47824040]
+visibility_layer = 513
+z_index = 30
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_4xy1x")
+
+[node name="MuzzlePoint" type="Node2D" parent="." unique_id=1242722548]
+position = Vector2(0, 1)
+
+[node name="GripPoint" type="Marker2D" parent="." unique_id=2025533105]
+position = Vector2(0, -19)
