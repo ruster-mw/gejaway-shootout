@@ -22,6 +22,7 @@ func player_respawn(player: RigidBody2D) -> void:
 	player.show()
 	player.get_node("Hitbox").disabled = false
 	player.add_to_group("camera_objects")
+	player.add_to_group("targetable")
 	player.position = Vector2(365, 486) #todo add actual checkpoints
 	
 func _ready() -> void:

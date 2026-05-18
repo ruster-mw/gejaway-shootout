@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cshjqkwalsf1k"]
+
+[ext_resource type="Script" uid="uid://bmnh70ty38pys" path="res://Resources/WeaponData.gd" id="1_ytrl2"]
+[ext_resource type="PackedScene" uid="uid://be5n54ioi0olx" path="res://PortalGun.tscn" id="2_sg1np"]
+[ext_resource type="Texture2D" uid="uid://osfpifk5uojg" path="res://Assets/PowerUps/portal_gun.png" id="3_c1hpq"]
+
+[resource]
+script = ExtResource("1_ytrl2")
+weaponScene = ExtResource("2_sg1np")
+weaponSprite = ExtResource("3_c1hpq")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"

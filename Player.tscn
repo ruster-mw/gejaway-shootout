@@ -66,7 +66,7 @@ script = ExtResource("4_e80uo")
 metadata/_edit_group_ = true
 
 [node name="HoldingPoint" type="Marker2D" parent="Arm" unique_id=1967647792]
-position = Vector2(0, 60)
+position = Vector2(0, 53)
 
 [node name="ArmSprite" type="Sprite2D" parent="Arm" unique_id=341076305]
 z_index = 30
@@ -94,3 +94,6 @@ target_position = Vector2(0, 65)
 z_index = 9
 position = Vector2(0, 3)
 target_position = Vector2(0, 65)
+
+[node name="TargetPoint" type="Marker2D" parent="." unique_id=1762091035]
+position = Vector2(-2, -64)

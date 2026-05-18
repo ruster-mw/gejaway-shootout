@@ -27,3 +27,6 @@ texture = ExtResource("2_ips0y")
 
 [node name="MuzzlePoint" type="Node2D" parent="." unique_id=665247675]
 position = Vector2(10, 33)
+
+[node name="GripPoint" type="Marker2D" parent="." unique_id=229258450]
+position = Vector2(-3, -5)

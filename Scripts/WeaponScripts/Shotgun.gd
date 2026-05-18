@@ -42,7 +42,7 @@ func fire() -> Dictionary:
 		if result.collider.has_node("HealthSystem"):
 			var health = result.collider.get_node("HealthSystem")
 			var finalDamage = max(0, bulletDamage - (pow(rangePercent,2) * falloff))
-			health.takeDamage(finalDamage)
+			health.takeDamage(finalDamage, holder)
 		if result.collider is RigidBody2D:
 			result.collider.apply_impulse(direction * knockback, result.collider.to_local(result.position))
 		return shotData

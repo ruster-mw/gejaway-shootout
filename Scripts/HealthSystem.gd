@@ -13,7 +13,7 @@ var isInvincible : bool = false #Are you sure?
 func _ready():
 	currentHealth = maxHealth
 
-func takeDamage(amount: float):
+func takeDamage(amount: float, shooter : Node2D = null):
 	if currentHealth <= 0 or isInvincible:
 		return 
 	var old = currentHealth

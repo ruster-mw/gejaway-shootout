@@ -1,4 +1,4 @@
-class_name Uzi
+class_name PortalGun
 extends BaseWeapon
 
 
@@ -22,7 +22,7 @@ func fire() -> Dictionary:
 	var space_state = get_world_2d().direct_space_state
 	var origin = muzzlePoint.global_position
 	var spreadAngle = deg_to_rad(randf_range(-bulletSpread, bulletSpread))
-	var direction = Vector2.DOWN.rotated(global_rotation + spreadAngle) 
+	var direction = Vector2.DOWN.rotated(global_rotation + spreadAngle)  
 	var end = origin + direction * bulletRange
 	var query = PhysicsRayQueryParameters2D.create(origin, end)
 	query.collision_mask = 0b00000101  # hits layers 1 and 3
@@ -43,8 +43,10 @@ func fire() -> Dictionary:
 			var health = result.collider.get_node("HealthSystem")
 			var finalDamage = max(0, bulletDamage - (rangePercent * falloff))
 			health.takeDamage(finalDamage, holder)
-		if result.collider is RigidBody2D:	
-			result.collider.apply_impulse(direction * knockback, result.collider.to_local(result.position))
+		if result.collider.is_in_group("players"):	
+			var tempPosition = result.collider.global_position
+			result.collider.global_position = get_parent().get_parent().global_position
+			get_parent().get_parent().global_position = tempPosition
 		return shotData
 		#Add more later
 	#var bullet = bulletScene.instantiate()
@@ -56,8 +58,8 @@ func createLine(shotData : Dictionary) -> void:
 	var instance = weaponLine.instantiate()
 	var gradient = Gradient.new()
 	gradient.colors = [
-		Color(0.4, 0.4, 0.4, 1.0),
-		Color(0.525, 0.525, 0.525, 1.0)
+		Color(0.349, 0.494, 0.769, 1.0),
+		Color(0.349, 0.725, 0.769, 1.0)
 	]
 	gradient.offsets = [0.0, 1.0]
 	instance.gradient = gradient
@@ -68,7 +70,7 @@ func createLine(shotData : Dictionary) -> void:
 
 func deleteLine(instance) -> void:
 	var elapsed = 0.0
-	var duration = 0.3
+	var duration = 0.5
 	while elapsed < duration:
 		elapsed += get_process_delta_time()
 		instance.modulate.a = lerpf(1.0, 0.0, elapsed / duration)

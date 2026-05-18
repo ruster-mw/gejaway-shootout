@@ -7,10 +7,13 @@ signal exhausted
 
 @export var ammo : int = 1
 @export var weaponName : String = ""
-var cooldown : float = 0
 @export var maxCooldown : float = 0
 @export var automatic : bool = false
 @export var pressed : bool = false
+@export var aim : bool = true
+var cooldown : float = 0
+
+@onready var gripPoint: Marker2D = $GripPoint
 
 var holder: RigidBody2D
 var isHeld: bool = false

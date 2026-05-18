@@ -51,6 +51,8 @@ func _balance(delta : float) -> void:
 			var extraForceMult = clamp(ceil(unbalanacedTime / 1.2), 1, 4)
 			var directionPower = clamp(-getrotation, -90.0, 90.0)
 			apply_torque(directionPower * extraForceMult * balancePower)
+		else:
+			unbalanacedTime = 0
 	else:
 		if unbalanacedTime > 0:
 			angular_velocity = angular_velocity / 100.0
@@ -60,6 +62,8 @@ func _balance(delta : float) -> void:
 func _startTurn(turningRight : bool) -> void:
 	if (isTurning || isGrounded() == false || jumpTime > 0):
 		return;
+	unbalanacedTime = 0
+	angular_velocity = 0
 	lock_rotation = true
 	turnRight = turningRight
 	isTurning = true
@@ -68,15 +72,12 @@ func _startTurn(turningRight : bool) -> void:
 
 func _turn(delta : float) -> void:
 	turningTime += delta
-	
 	getrotation = rotation_degrees
 	getrotation = wrapf(getrotation, -180.0, 180.0)
 	var direction = 1 if turnRight else -1
-	
 	var turnSpeed : float = min(turningTime / lerpTurnTime, 1.0) * maxTurnSpeed
 	if ((getrotation > maxTurnAngle * direction) == !turnRight):
 		rotation_degrees = getrotation + turnSpeed * direction * delta
-		
 	
 func isGrounded() -> bool:
 	return floorRayCast.is_colliding() || rightFloorRayCast.is_colliding() || leftFloorRayCast.is_colliding()
@@ -132,6 +133,7 @@ func die() -> void:
 	
 	instance.add_to_group("camera_objects")
 	remove_from_group("camera_objects")
+	remove_from_group("targetable")
 	
 func disable() -> void:
 	jumpTime = 0
@@ -148,7 +150,8 @@ func takeDamage(amount : float) -> void:
 func addWeapon(weapon : Node2D):
 	print("picked up a weapon")
 	$Arm.add_child(weapon)
-	weapon.position = holdingSpot.position
+	$Arm.shouldAim = weapon.aim
+	weapon.position = holdingSpot.position - weapon.gripPoint.position
 	weapon.pickUp(self)
 	automaticWeapon = weapon.automatic
 	currentWeapon = weapon
@@ -163,7 +166,6 @@ func _ready() -> void:
 	powerup = "player%d_powerup" % player_id
 
 func _process(delta: float) -> void:
-	
 	if Input.is_action_pressed(left):
 		_startTurn(false)
 	elif Input.is_action_pressed(right):

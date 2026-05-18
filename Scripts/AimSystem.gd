@@ -2,6 +2,7 @@ class_name AimSystem
 extends RigidBody2D
 
 @export var range : float = 1600
+@export var shouldAim : bool = true
 @onready var rigidBody : RigidBody2D = get_parent()
 
 func getTarget() -> Node2D:
@@ -28,13 +29,15 @@ func _draw():
 
 func _physics_process(delta):
 	queue_redraw()
+	if (!shouldAim):
+		return
 	for child in get_children():
 		if child is BaseWeapon:
 			var muzzlePoint = child.get_node("MuzzlePoint")
 			var target = getTarget()
 			if target == null:
 				return
-			var direction = target.global_position - muzzlePoint.global_position
+			var direction = target.get_node("TargetPoint").global_position - muzzlePoint.global_position
 			var target_angle = direction.angle() - PI / 2.0
 			var angle_difference = wrapf(target_angle - global_rotation, -PI, PI)
 			var torque_strength := 8000.0

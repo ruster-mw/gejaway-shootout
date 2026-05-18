@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://be5n54ioi0olx"]
+
+[ext_resource type="Script" uid="uid://dbjm767bjey3t" path="res://Scripts/WeaponScripts/PortalGun.gd" id="1_gh741"]
+[ext_resource type="Texture2D" uid="uid://osfpifk5uojg" path="res://Assets/PowerUps/portal_gun.png" id="2_kbdau"]
+
+[node name="PortalGun" type="Node2D" unique_id=429469889]
+script = ExtResource("1_gh741")
+bulletSpeed = 2000.0
+bulletSpread = 2.0
+bulletDamage = 10.0
+bulletRange = 1200.0
+weaponName = "Portal Gun"
+maxCooldown = 0.3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=950397659]
+visibility_layer = 513
+z_index = 30
+rotation = 1.5707964
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_kbdau")
+
+[node name="MuzzlePoint" type="Node2D" parent="." unique_id=691526195]
+position = Vector2(7, 20)
+
+[node name="GripPoint" type="Marker2D" parent="." unique_id=1003598061]
+position = Vector2(-4, -16)
