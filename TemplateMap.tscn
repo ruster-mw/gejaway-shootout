@@ -130,15 +130,15 @@ shape = SubResource("RectangleShape2D_g4isi")
 [node name="Background" type="Node" parent="." unique_id=1399135726]
 
 [node name="WeaponArea" parent="." unique_id=1624108469 instance=ExtResource("5_t84c5")]
-position = Vector2(-1004, 449)
+position = Vector2(-238, 325)
 weaponPool = Array[ExtResource("6_biwu2")]([SubResource("Resource_gbttm")])
 
 [node name="WeaponArea5" parent="." unique_id=1020335624 instance=ExtResource("5_t84c5")]
-position = Vector2(-817, 456)
+position = Vector2(-965, 480)
 weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("9_nptha")])
 
 [node name="WeaponArea6" parent="." unique_id=854610201 instance=ExtResource("5_t84c5")]
-position = Vector2(-295, 439)
+position = Vector2(-830, 477)
 weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("10_nptha")])
 
 [node name="WeaponArea2" parent="." unique_id=341163195 instance=ExtResource("5_t84c5")]

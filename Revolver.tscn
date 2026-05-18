@@ -9,7 +9,7 @@ z_as_relative = false
 script = ExtResource("1_8lx1p")
 ammo = 6
 weaponName = "Revolver"
-maxCooldown = 0.25
+maxCooldown = 0.33
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1834806780]
 visibility_layer = 513
@@ -17,7 +17,7 @@ rotation = 1.5707964
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_l747f")
 
-[node name="MuzzlePoint" type="Node2D" parent="." unique_id=226228691]
+[node name="MuzzlePoint" type="Marker2D" parent="." unique_id=1223534676]
 position = Vector2(8, 23)
 
 [node name="GripPoint" type="Marker2D" parent="." unique_id=118812987]

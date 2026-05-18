@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://xnkugk5f4oxa"]
+
+[ext_resource type="Script" uid="uid://dln1uh8uaky35" path="res://Scripts/WeaponScripts/RevolverBullet.gd" id="1_bglnh"]
+[ext_resource type="Texture2D" uid="uid://dep3mrpyn8c3p" path="res://Assets/PowerUps/revolver_bullet.png" id="2_1x6mx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv2fa"]
+size = Vector2(12, 22)
+
+[node name="RevolverBullet" type="RigidBody2D" unique_id=494877163]
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_bglnh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1625752763]
+shape = SubResource("RectangleShape2D_yv2fa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1904496494]
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_1x6mx")
+flip_v = true
