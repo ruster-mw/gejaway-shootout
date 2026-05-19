@@ -18,12 +18,26 @@ func player_death(player: RigidBody2D) -> void:
 	
 func player_respawn(player: RigidBody2D) -> void:
 	await get_tree().create_timer(2.0).timeout
+
 	player.health.setMaxHealth()
+
+	player.linear_velocity = Vector2.ZERO
+	player.angular_velocity = 0.0
+	player.rotation = 0.0
+	player.sleeping = false
+
+	player.jumpTime = 0
+	player.turningTime = 0
+	player.unbalanacedTime = 0
+	player.inContact = false
+	player.isTurning = false
+	player.lock_rotation = false
+
 	player.show()
 	player.get_node("Hitbox").disabled = false
 	player.add_to_group("camera_objects")
 	player.add_to_group("targetable")
-	player.position = Vector2(365, 486) #todo add actual checkpoints
+	player.position = Vector2(365, 486)
 	
 func _ready() -> void:
 	createPlayers()

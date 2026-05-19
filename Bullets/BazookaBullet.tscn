@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c8gs51w6xu43n"]
+
+[ext_resource type="Script" uid="uid://cvlivlvfjma00" path="res://Scripts/WeaponScripts/BazookaBullet.gd" id="1_0mhyf"]
+[ext_resource type="Texture2D" uid="uid://btck0cq4rl8bt" path="res://Assets/PowerUps/bazooka_bullet.png" id="2_5rynq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0oje"]
+size = Vector2(18, 30)
+
+[node name="BazookaBullet" type="RigidBody2D" unique_id=1911276830]
+mass = 0.001
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_0mhyf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1618338212]
+shape = SubResource("RectangleShape2D_i0oje")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=323184379]
+rotation = 1.5707964
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("2_5rynq")
+flip_v = true

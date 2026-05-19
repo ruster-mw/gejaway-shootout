@@ -71,6 +71,7 @@ func _startTurn(turningRight : bool) -> void:
 	
 
 func _turn(delta : float) -> void:
+	print("turn")
 	turningTime += delta
 	getrotation = rotation_degrees
 	getrotation = wrapf(getrotation, -180.0, 180.0)

@@ -23,7 +23,7 @@ rotation = 1.5707964
 scale = Vector2(2.3, 2.3)
 texture = ExtResource("2_73jju")
 
-[node name="MuzzlePoint" type="Node2D" parent="." unique_id=902566757]
+[node name="MuzzlePoint" type="Marker2D" parent="." unique_id=505219583]
 position = Vector2(1, 44)
 
 [node name="GripPoint" type="Marker2D" parent="." unique_id=175849497]

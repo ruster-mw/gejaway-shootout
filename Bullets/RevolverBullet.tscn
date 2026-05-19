@@ -7,6 +7,7 @@
 size = Vector2(12, 22)
 
 [node name="RevolverBullet" type="RigidBody2D" unique_id=494877163]
+mass = 0.001
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1

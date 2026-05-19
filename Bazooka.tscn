@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dg3onbfou62g1"]
+
+[ext_resource type="Script" uid="uid://d3v6lm4mmat5m" path="res://Scripts/WeaponScripts/Bazooka.gd" id="1_3oppd"]
+[ext_resource type="Texture2D" uid="uid://dk0ndtp4pm2qd" path="res://Assets/PowerUps/bazooka.png" id="2_t502r"]
+
+[node name="Bazooka" type="Node2D" unique_id=1133130056]
+z_index = 20
+z_as_relative = false
+script = ExtResource("1_3oppd")
+bulletSpeed = 1500.0
+bulletDamage = 200.0
+bulletKnockback = 200.0
+weaponName = "Bazooka"
+maxCooldown = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=131461846]
+visibility_layer = 513
+z_index = 30
+rotation = 1.5707964
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_t502r")
+
+[node name="MuzzlePoint" type="Marker2D" parent="." unique_id=942689813]
+position = Vector2(2, 65)
+
+[node name="GripPoint" type="Marker2D" parent="." unique_id=1338009153]
+position = Vector2(-9, 12)

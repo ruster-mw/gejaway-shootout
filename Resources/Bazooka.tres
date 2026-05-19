@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://c2k7d1eywrj5l"]
+
+[ext_resource type="Script" uid="uid://bmnh70ty38pys" path="res://Resources/WeaponData.gd" id="1_kaefy"]
+[ext_resource type="PackedScene" uid="uid://dg3onbfou62g1" path="res://Bazooka.tscn" id="2_ktufk"]
+[ext_resource type="Texture2D" uid="uid://dk0ndtp4pm2qd" path="res://Assets/PowerUps/bazooka.png" id="3_lqurr"]
+
+[resource]
+script = ExtResource("1_kaefy")
+weaponScene = ExtResource("2_ktufk")
+weaponSprite = ExtResource("3_lqurr")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"
