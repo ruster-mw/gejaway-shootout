@@ -1,7 +1,7 @@
 class_name AimSystem
 extends RigidBody2D
 
-@export var range : float = 1600
+@export var range : float = 2000
 @export var shouldAim : bool = true
 @onready var rigidBody : RigidBody2D = get_parent()
 

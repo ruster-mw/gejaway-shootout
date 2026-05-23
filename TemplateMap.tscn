@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://qigy075h7rdx" path="res://Resources/Sniper.tres" id="9_y6ckt"]
 [ext_resource type="Resource" uid="uid://5t50bxj3fyqv" path="res://Resources/Shotgun.tres" id="10_e4e7i"]
 [ext_resource type="Resource" uid="uid://cpmqfloqdy35j" path="res://Resources/AidKit.tres" id="10_nptha"]
+[ext_resource type="Resource" uid="uid://dv6e0js41xsnp" path="res://Resources/FireRod.tres" id="10_xag3c"]
 [ext_resource type="Resource" uid="uid://dsdj1bchjl15o" path="res://Resources/Uzi.tres" id="10_xnwy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jicg0"]
@@ -135,8 +136,12 @@ position = Vector2(-880, 297)
 weaponPool = Array[ExtResource("6_biwu2")]([SubResource("Resource_gbttm")])
 
 [node name="WeaponArea7" parent="." unique_id=1363587643 instance=ExtResource("5_t84c5")]
-position = Vector2(-279, 328)
+position = Vector2(-666, 300)
 weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("9_ixlp0")])
+
+[node name="WeaponArea8" parent="." unique_id=1739639700 instance=ExtResource("5_t84c5")]
+position = Vector2(-345, 383)
+weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("10_xag3c")])
 
 [node name="WeaponArea5" parent="." unique_id=1020335624 instance=ExtResource("5_t84c5")]
 position = Vector2(-965, 480)

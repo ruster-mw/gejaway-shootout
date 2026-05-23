@@ -1,11 +1,12 @@
-class_name Bazooka
+class_name FireRod
 extends BaseWeapon
 
-@export var bulletScene : PackedScene = load("res://Bullets/BazookaBullet.tscn")
+@export var bulletScene : PackedScene = load("res://Bullets/FireBall.tscn")
 @export var bulletSpeed : float 
 @export var bulletDamage : float 
 @export var bulletKnockback : float 
 @export var explosionRadius : float
+
 
 @onready var muzzlePoint : Marker2D = $MuzzlePoint
 

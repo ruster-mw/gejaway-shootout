@@ -13,6 +13,7 @@ size = Vector2(18, 65)
 script = ExtResource("1_mndxs")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=198323385]
+modulate = Color(1, 0.17000002, 0.17000002, 1)
 z_index = 9
 scale = Vector2(1.355, 1.355)
 texture = ExtResource("2_ek0f2")
@@ -42,6 +43,7 @@ metadata/_edit_group_ = true
 position = Vector2(-5, 2)
 
 [node name="ArmSprite" type="Sprite2D" parent="Arm" unique_id=1956207118]
+modulate = Color(1, 0.17000002, 0.17000002, 1)
 z_index = 10
 position = Vector2(-5, -26)
 scale = Vector2(1.355, 1.355)

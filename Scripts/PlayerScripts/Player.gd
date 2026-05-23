@@ -47,7 +47,6 @@ func _balance(delta : float) -> void:
 	getrotation = wrapf(getrotation, -180.0, 180.0)
 	if (absf(getrotation) > maxUpRightAngle):
 		if (inContact):
-			print("balance")
 			unbalanacedTime += delta
 			var extraForceMult = clamp(ceil(unbalanacedTime / 1.2), 1, 4)
 			var directionPower = clamp(-getrotation, -90.0, 90.0)
@@ -99,7 +98,10 @@ func _handleVisuals() -> void:
 	armSprite.flip_h = !turnRight
 	if currentWeapon:
 		var weaponSprite = currentWeapon.get_node("Sprite2D")
-		weaponSprite.scale.y = -absf(weaponSprite.scale.y) if !turnRight else absf(weaponSprite.scale.y)
+		if currentWeapon.flipx:
+			weaponSprite.scale.x = -absf(weaponSprite.scale.x) if !turnRight else absf(weaponSprite.scale.x)
+		else:
+			weaponSprite.scale.y = -absf(weaponSprite.scale.y) if !turnRight else absf(weaponSprite.scale.y)
 		currentWeapon.muzzlePoint.position.x = -absf(currentWeapon.muzzlePoint.position.x) if !turnRight else absf(currentWeapon.muzzlePoint.position.x)
 	#var direction = 1 if turnRight else -1
 	#$Arm.position = Vector2(armPosition.x * direction, armPosition.y)
@@ -120,6 +122,7 @@ func die() -> void:
 	instance.rotation = rotation
 	instance.global_position = global_position
 	instance.linear_velocity = linear_velocity
+	print(rotation, linear_velocity, angular_velocity)
 	linear_velocity = Vector2.ZERO
 	instance.angular_velocity = angular_velocity
 	angular_velocity = 0

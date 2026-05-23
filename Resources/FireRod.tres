@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://dv6e0js41xsnp"]
+
+[ext_resource type="Script" uid="uid://bmnh70ty38pys" path="res://Resources/WeaponData.gd" id="1_m5yvg"]
+[ext_resource type="PackedScene" uid="uid://c525xpfdy2l6l" path="res://FireRod.tscn" id="2_4arxr"]
+[ext_resource type="Texture2D" uid="uid://bmghtm5ufh8ir" path="res://Assets/PowerUps/fire_rod.png" id="3_woe4s"]
+
+[resource]
+script = ExtResource("1_m5yvg")
+weaponScene = ExtResource("2_4arxr")
+weaponSprite = ExtResource("3_woe4s")
+metadata/_custom_type_script = "uid://bmnh70ty38pys"

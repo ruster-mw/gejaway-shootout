@@ -8,8 +8,9 @@ z_index = 20
 z_as_relative = false
 script = ExtResource("1_3oppd")
 bulletSpeed = 1500.0
-bulletDamage = 200.0
-bulletKnockback = 1800.0
+bulletDamage = 130.0
+bulletKnockback = 1400.0
+explosionRadius = 170.0
 weaponName = "Bazooka"
 maxCooldown = 1.0
 

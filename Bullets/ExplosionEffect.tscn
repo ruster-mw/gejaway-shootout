@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cpjwf2y1y4iuk"]
+
+[ext_resource type="Script" uid="uid://cup6a1s1ufqd2" path="res://Scripts/WeaponScripts/ExplosionEffect.gd" id="1_foyjb"]
+
+[sub_resource type="Curve" id="Curve_tab5q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.63265306, 0.7415731), 0.0, 0.0, 0, 0, Vector2(1, 0.011235952), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_h242q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.24719107), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_te8tx"]
+colors = PackedColorArray(1, 0.03333336, 0, 1, 1, 1, 1, 1)
+
+[node name="ExplosionEffect" type="Node2D" unique_id=975405914]
+z_index = 30
+script = ExtResource("1_foyjb")
+
+[node name="ExplosionParticles" type="CPUParticles2D" parent="." unique_id=657605116]
+emitting = false
+amount = 40
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 420.0
+scale_amount_min = 20.0
+scale_amount_max = 60.0
+scale_amount_curve = SubResource("Curve_tab5q")
+color = Color(0.33660764, 0.3366076, 0.3366076, 1)
+
+[node name="FireParticles" type="CPUParticles2D" parent="." unique_id=1231677865]
+modulate = Color(0.6706895, 0.6706895, 0.6706895, 1)
+emitting = false
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 340.0
+scale_amount_min = 120.0
+scale_amount_max = 200.0
+scale_amount_curve = SubResource("Curve_h242q")
+color = Color(0.99, 0.42900002, 0, 1)
+color_initial_ramp = SubResource("Gradient_te8tx")

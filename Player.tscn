@@ -19,7 +19,7 @@ size = Vector2(18, 65)
 [node name="Player" type="RigidBody2D" unique_id=1774049121 groups=["camera_objects", "players", "targetable"]]
 visibility_layer = 513
 z_index = 10
-position = Vector2(339, 204)
+position = Vector2(339, 154)
 physics_material_override = SubResource("PhysicsMaterial_kne1u")
 gravity_scale = 1.5
 contact_monitor = true
@@ -30,18 +30,19 @@ script = ExtResource("1_kne1u")
 script = ExtResource("2_kne1u")
 
 [node name="FloorShapeCast" type="ShapeCast2D" parent="." unique_id=1038747258]
-position = Vector2(34, 61)
+position = Vector2(34, 110.99999)
 shape = SubResource("SegmentShape2D_kne1u")
 target_position = Vector2(-68, 0)
 max_results = 1
 
 [node name="Hitbox" type="CollisionShape2D" parent="." unique_id=85813842]
-position = Vector2(0, -25.5)
+position = Vector2(0, 24.499992)
 shape = SubResource("RectangleShape2D_gqagy")
 debug_color = Color(0, 0.6, 0.7019608, 0.12156863)
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1538836306]
 z_index = 9
+position = Vector2(0, 50)
 scale = Vector2(1.355, 1.355)
 texture = ExtResource("3_e80uo")
 offset = Vector2(0, -19)
@@ -49,14 +50,14 @@ region_enabled = true
 region_rect = Rect2(8, 16, 48, 136)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="." unique_id=2044056091]
-position = Vector2(-2, -60)
+position = Vector2(-2, -10.000015)
 node_a = NodePath("../Arm")
 node_b = NodePath("..")
 
 [node name="Arm" type="RigidBody2D" parent="." unique_id=551607651]
 visibility_layer = 1025
 z_index = 30
-position = Vector2(-2, -60)
+position = Vector2(-2, -10.000015)
 collision_layer = 0
 collision_mask = 0
 mass = 0.02
@@ -82,18 +83,18 @@ shape = SubResource("RectangleShape2D_8oubu")
 
 [node name="LeftFloorRayCast" type="RayCast2D" parent="." unique_id=2116509609]
 z_index = 9
-position = Vector2(24, 3)
+position = Vector2(24, 52.999992)
 target_position = Vector2(0, 65)
 
 [node name="RightFloorRayCast" type="RayCast2D" parent="." unique_id=960897052]
 z_index = 9
-position = Vector2(-26, 3)
+position = Vector2(-26, 52.999992)
 target_position = Vector2(0, 65)
 
 [node name="FloorRayCast" type="RayCast2D" parent="." unique_id=373225311]
 z_index = 9
-position = Vector2(0, 3)
+position = Vector2(0, 52.999992)
 target_position = Vector2(0, 65)
 
 [node name="TargetPoint" type="Marker2D" parent="." unique_id=1762091035]
-position = Vector2(-2, -64)
+position = Vector2(-2, -14.000015)

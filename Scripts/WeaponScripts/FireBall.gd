@@ -1,4 +1,4 @@
-class_name BazookaBullet
+class_name FireBall
 extends Area2D
 
 var damage : float 
@@ -7,8 +7,13 @@ var holder : Node2D
 var travelDirection : Vector2
 var speed : float
 var radius
+var time = 0
+var started = false
+var startPosition : Vector2 
+var waveAmplitude = 70.0
+var waveFrequency = 10.0
 
-const explosionEffect = preload("res://Bullets/ExplosionEffect.tscn")
+const explosionEffect = preload("res://Bullets/EruptionEffect.tscn")
 
 
 func _draw():
@@ -43,13 +48,15 @@ func explode(directHit = null) -> void:
 			body.linear_velocity += dir * knockback / body.mass
 		if body.has_node("HealthSystem"):
 			body.get_node("HealthSystem").takeDamage(finaldamage , holder)
-		
 	queue_free()
 
 func _process(delta: float) -> void:
 	#queue_redraw()
-	position += travelDirection * speed * delta
-
+	time += delta
+	var perp = Vector2(-travelDirection.y, travelDirection.x)
+	global_position = startPosition + travelDirection * speed * time + perp * waveAmplitude * cos(time * waveFrequency)+ Vector2(0, -20 * time)
+	#position += travelDirection * speed * delta
+	
 func _ready() -> void:
 	body_entered.connect(_onBodyEntered)
 	get_tree().create_timer(5.0).timeout.connect(explode)
@@ -66,3 +73,5 @@ func init(weapon, direction) -> void:
 	speed = weapon.bulletSpeed
 	radius = weapon.explosionRadius
 	travelDirection = direction
+	startPosition = global_position
+	

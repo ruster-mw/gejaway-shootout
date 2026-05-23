@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c525xpfdy2l6l"]
+
+[ext_resource type="Script" uid="uid://xdar1qvuuoqk" path="res://Scripts/WeaponScripts/FireRod.gd" id="1_paylj"]
+[ext_resource type="Texture2D" uid="uid://bmghtm5ufh8ir" path="res://Assets/PowerUps/fire_rod.png" id="2_n7tit"]
+
+[node name="FireRod" type="Node2D" unique_id=1625301222]
+z_index = 20
+z_as_relative = false
+script = ExtResource("1_paylj")
+bulletSpeed = 500.0
+bulletDamage = 90.0
+bulletKnockback = 2600.0
+explosionRadius = 60.0
+weaponName = "Fire Rod"
+maxCooldown = 0.5
+flipx = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1481304990]
+visibility_layer = 513
+z_index = 30
+rotation = 1.5707964
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_n7tit")
+
+[node name="MuzzlePoint" type="Marker2D" parent="." unique_id=1921324717]
+position = Vector2(29, 1)
+
+[node name="GripPoint" type="Marker2D" parent="." unique_id=1398028504]
+position = Vector2(-21, 0)

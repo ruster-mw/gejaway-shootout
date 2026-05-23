@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bp6j5fkrkux2f"]
+
+[ext_resource type="Script" uid="uid://ctnw8mec53fo2" path="res://Scripts/WeaponScripts/EruptionEffect.gd" id="1_0h8d5"]
+
+[sub_resource type="Curve" id="Curve_sc0si"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.63265306, 0.7415731), 0.0, 0.0, 0, 0, Vector2(1, 0.011235952), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_0h8d5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.24719107), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_xk1sm"]
+colors = PackedColorArray(1, 0.03333336, 0, 1, 1, 1, 1, 1)
+
+[node name="EruptionEffect" type="Node2D" unique_id=489752822]
+z_index = 30
+script = ExtResource("1_0h8d5")
+
+[node name="ExplosionParticles" type="CPUParticles2D" parent="." unique_id=954508436]
+emitting = false
+amount = 40
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 420.0
+scale_amount_min = 20.0
+scale_amount_max = 60.0
+scale_amount_curve = SubResource("Curve_sc0si")
+color = Color(0.9666667, 1, 0, 1)
+
+[node name="FireParticles" type="CPUParticles2D" parent="." unique_id=2087581315]
+modulate = Color(0.6706895, 0.6706895, 0.6706895, 1)
+emitting = false
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.0
+initial_velocity_max = 340.0
+scale_amount_min = 120.0
+scale_amount_max = 200.0
+scale_amount_curve = SubResource("Curve_0h8d5")
+color = Color(0.99, 0.42900002, 0, 1)
+color_initial_ramp = SubResource("Gradient_xk1sm")

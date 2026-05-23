@@ -11,6 +11,7 @@ signal exhausted
 @export var automatic : bool = false
 @export var pressed : bool = false
 @export var aim : bool = true
+@export var flipx = false
 var cooldown : float = 0
 
 @onready var gripPoint: Marker2D = $GripPoint
