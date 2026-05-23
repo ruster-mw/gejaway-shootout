@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tfx3vcu1ocsw"
-path="res://.godot/imported/asian.png-147730c2ddf10a8f10149bad46740b8d.ctex"
+uid="uid://dh78vx8giqsql"
+path="res://.godot/imported/lenny.png-be7a8e73d663a84b749e749edad3540e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Players/asian.png"
-dest_files=["res://.godot/imported/asian.png-147730c2ddf10a8f10149bad46740b8d.ctex"]
+source_file="res://Assets/Players/lenny.png"
+dest_files=["res://.godot/imported/lenny.png-be7a8e73d663a84b749e749edad3540e.ctex"]
 
 [params]
 

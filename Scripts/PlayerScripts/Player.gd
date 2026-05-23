@@ -47,6 +47,7 @@ func _balance(delta : float) -> void:
 	getrotation = wrapf(getrotation, -180.0, 180.0)
 	if (absf(getrotation) > maxUpRightAngle):
 		if (inContact):
+			print("balance")
 			unbalanacedTime += delta
 			var extraForceMult = clamp(ceil(unbalanacedTime / 1.2), 1, 4)
 			var directionPower = clamp(-getrotation, -90.0, 90.0)
@@ -71,7 +72,6 @@ func _startTurn(turningRight : bool) -> void:
 	
 
 func _turn(delta : float) -> void:
-	print("turn")
 	turningTime += delta
 	getrotation = rotation_degrees
 	getrotation = wrapf(getrotation, -180.0, 180.0)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bw720vmtaet1r" path="res://Scripts/PlayerScripts/Player.gd" id="1_kne1u"]
 [ext_resource type="Script" uid="uid://cpt0im2v06e5x" path="res://Scripts/HealthSystem.gd" id="2_kne1u"]
-[ext_resource type="Texture2D" uid="uid://22soq046sy7k" path="res://Assets/Players/goat.png" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://22soq046sy7k" path="res://Assets/Players/goat.png" id="3_e80uo"]
 [ext_resource type="Script" uid="uid://daxatwq4xchwt" path="res://Scripts/AimSystem.gd" id="4_e80uo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kne1u"]
@@ -43,7 +43,7 @@ debug_color = Color(0, 0.6, 0.7019608, 0.12156863)
 [node name="Body" type="Sprite2D" parent="." unique_id=1538836306]
 z_index = 9
 scale = Vector2(1.355, 1.355)
-texture = ExtResource("2_kpjcp")
+texture = ExtResource("3_e80uo")
 offset = Vector2(0, -19)
 region_enabled = true
 region_rect = Rect2(8, 16, 48, 136)
@@ -72,7 +72,7 @@ position = Vector2(0, 53)
 z_index = 30
 position = Vector2(0, 29.000008)
 scale = Vector2(1.355, 1.355)
-texture = ExtResource("2_kpjcp")
+texture = ExtResource("3_e80uo")
 region_enabled = true
 region_rect = Rect2(60, 62, 20, 52)
 

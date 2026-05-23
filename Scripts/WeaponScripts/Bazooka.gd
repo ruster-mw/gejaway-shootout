@@ -14,10 +14,5 @@ func fire() -> Dictionary:
 	bullet.global_rotation = muzzlePoint.global_rotation
 	var direction = Vector2.DOWN.rotated(muzzlePoint.global_rotation)
 	get_tree().current_scene.add_child(bullet)
-	bullet.init(self)
-	bullet.linear_velocity = direction * bulletSpeed
+	bullet.init(self,direction)
 	return {}
-
-
-	
-	
