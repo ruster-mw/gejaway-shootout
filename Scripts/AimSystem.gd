@@ -1,7 +1,7 @@
 class_name AimSystem
 extends RigidBody2D
 
-@export var range : float = 2000
+@export var range : float = 2200
 @export var shouldAim : bool = true
 @onready var rigidBody : RigidBody2D = get_parent()
 
@@ -24,7 +24,7 @@ func _draw():
 	var target = getTarget()
 	if target == null:
 		return
-	var localTarget = to_local(target.global_position)
+	var localTarget = to_local(target.get_node("TargetPoint").global_position)
 	draw_line(Vector2.ZERO, localTarget, Color.RED, 2.0)
 
 func _physics_process(delta):
@@ -37,11 +37,11 @@ func _physics_process(delta):
 			var target = getTarget()
 			if target == null:
 				return
-			var direction = target.get_node("TargetPoint").global_position - muzzlePoint.global_position
+			var direction = target.get_node("TargetPoint").global_position - global_position
 			var target_angle = direction.angle() - PI / 2.0
 			var angle_difference = wrapf(target_angle - global_rotation, -PI, PI)
-			var torque_strength := 8000.0
-			var damping := 900.0
+			var torque_strength = 16000.0
+			var damping = 900
 			apply_torque(angle_difference * torque_strength - angular_velocity * damping)
 	
 func _ready() -> void:

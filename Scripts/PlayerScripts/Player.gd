@@ -97,11 +97,13 @@ func _handleVisuals() -> void:
 	sprite.flip_h = !turnRight
 	armSprite.flip_h = !turnRight
 	if currentWeapon:
-		var weaponSprite = currentWeapon.get_node("Sprite2D")
+		var weaponSprite: Sprite2D = currentWeapon.get_node("Sprite2D")
 		if currentWeapon.flipx:
-			weaponSprite.scale.x = -absf(weaponSprite.scale.x) if !turnRight else absf(weaponSprite.scale.x)
+			weaponSprite.flip_h = !turnRight
+			weaponSprite.flip_v = false
 		else:
-			weaponSprite.scale.y = -absf(weaponSprite.scale.y) if !turnRight else absf(weaponSprite.scale.y)
+			weaponSprite.flip_v = !turnRight
+			weaponSprite.flip_h = false
 		currentWeapon.muzzlePoint.position.x = -absf(currentWeapon.muzzlePoint.position.x) if !turnRight else absf(currentWeapon.muzzlePoint.position.x)
 	#var direction = 1 if turnRight else -1
 	#$Arm.position = Vector2(armPosition.x * direction, armPosition.y)
@@ -183,6 +185,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed(powerup) if automaticWeapon else Input.is_action_just_pressed(powerup):
 		for child in find_children("*", "BaseWeapon", true, false):
 			child.use()
+	_handleVisuals()
 	
 
 func _physics_process(delta: float) -> void:

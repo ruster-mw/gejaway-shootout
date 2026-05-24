@@ -140,7 +140,7 @@ position = Vector2(-666, 300)
 weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("9_ixlp0")])
 
 [node name="WeaponArea8" parent="." unique_id=1739639700 instance=ExtResource("5_t84c5")]
-position = Vector2(-345, 383)
+position = Vector2(-48, 407)
 weaponPool = Array[ExtResource("6_biwu2")]([ExtResource("10_xag3c")])
 
 [node name="WeaponArea5" parent="." unique_id=1020335624 instance=ExtResource("5_t84c5")]

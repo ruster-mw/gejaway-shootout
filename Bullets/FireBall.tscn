@@ -6,6 +6,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_rsu3w"]
 radius = 24.0
 
+[sub_resource type="Curve" id="Curve_g1gb5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.4044944), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kf3i4"]
+offsets = PackedFloat32Array(0, 0.31176472, 0.5294118, 0.7764706, 0.9882353)
+colors = PackedColorArray(0.9372549, 0.09019608, 0, 1, 0.9490196, 0.45882353, 0.011764706, 1, 0.9607843, 0.78039217, 0.023529412, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="FireBall" type="Area2D" unique_id=1794095398]
 script = ExtResource("1_g1gb5")
 
@@ -17,3 +25,18 @@ rotation = 1.5707964
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_kf3i4")
 flip_v = true
+
+[node name="Fire" type="Node2D" parent="." unique_id=1308430053]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Fire" unique_id=1217155552]
+amount = 1000
+lifetime = 0.5
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector2(0, -800)
+radial_accel_min = -50.0
+radial_accel_max = -40.0
+scale_amount_min = 8.0
+scale_amount_max = 12.0
+scale_amount_curve = SubResource("Curve_g1gb5")
+color_ramp = SubResource("Gradient_kf3i4")

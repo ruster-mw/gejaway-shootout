@@ -42,7 +42,7 @@ func explode(directHit = null) -> void:
 		if body == holder || body == directHit:
 			continue
 		var dist = global_position.distance_to(body.global_position)
-		var finaldamage = -absf(0.4 * dist) + damage
+		var finaldamage = damage
 		if body is RigidBody2D:
 			var dir = (body.global_position - global_position).normalized()
 			body.linear_velocity += dir * knockback / body.mass
@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 	#queue_redraw()
 	time += delta
 	var perp = Vector2(-travelDirection.y, travelDirection.x)
-	global_position = startPosition + travelDirection * speed * time + perp * waveAmplitude * cos(time * waveFrequency)+ Vector2(0, -20 * time)
+	global_position = startPosition + travelDirection * speed * time + perp * waveAmplitude * sin(time * waveFrequency)+ Vector2(0, -0 * time)
 	#position += travelDirection * speed * delta
 	
 func _ready() -> void:
