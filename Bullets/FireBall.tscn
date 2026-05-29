@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://clq5ymfklr5kk" path="res://Assets/PowerUps/fireball.png" id="2_kf3i4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rsu3w"]
-radius = 24.0
+radius = 18.0
 
 [sub_resource type="Curve" id="Curve_g1gb5"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.4044944), 0.0, 0.0, 0, 0]
@@ -22,7 +22,7 @@ shape = SubResource("CircleShape2D_rsu3w")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=257154593]
 rotation = 1.5707964
-scale = Vector2(1.8, 1.8)
+scale = Vector2(1.7, 1.7)
 texture = ExtResource("2_kf3i4")
 flip_v = true
 
@@ -32,11 +32,11 @@ flip_v = true
 amount = 1000
 lifetime = 0.5
 emission_shape = 1
-emission_sphere_radius = 30.0
+emission_sphere_radius = 22.0
 gravity = Vector2(0, -800)
 radial_accel_min = -50.0
 radial_accel_max = -40.0
-scale_amount_min = 8.0
-scale_amount_max = 12.0
+scale_amount_min = 7.0
+scale_amount_max = 11.0
 scale_amount_curve = SubResource("Curve_g1gb5")
 color_ramp = SubResource("Gradient_kf3i4")
