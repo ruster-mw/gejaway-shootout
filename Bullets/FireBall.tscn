@@ -7,8 +7,8 @@
 radius = 18.0
 
 [sub_resource type="Curve" id="Curve_g1gb5"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.4044944), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.3520408, 0.49438208), 0.0, 0.0, 0, 0, Vector2(1, 0.34831464), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_kf3i4"]
 offsets = PackedFloat32Array(0, 0.31176472, 0.5294118, 0.7764706, 0.9882353)

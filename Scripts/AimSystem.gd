@@ -1,7 +1,7 @@
 class_name AimSystem
 extends RigidBody2D
 
-@export var range : float = 2200
+@export var aimRange : float = 2200
 @export var shouldAim : bool = true
 @onready var rigidBody : RigidBody2D = get_parent()
 
@@ -13,7 +13,7 @@ func getTarget() -> Node2D:
 		if target == rigidBody: 
 			continue
 		var rangeToTarget = global_position.distance_to(target.global_position)
-		if rangeToTarget > range:
+		if rangeToTarget > aimRange:
 			continue
 		if closestRange > rangeToTarget:
 			closestRange = rangeToTarget
@@ -39,10 +39,10 @@ func _physics_process(delta):
 				return
 			var direction = target.get_node("TargetPoint").global_position - global_position
 			var target_angle = direction.angle() - PI / 2.0
-			var angle_difference = wrapf(target_angle - global_rotation, -PI, PI)
-			var torque_strength = 16000.0
-			var damping = 900
-			apply_torque(angle_difference * torque_strength - angular_velocity * damping)
+			var angleDifference = wrapf(target_angle - global_rotation, -PI, PI)
+			var torque_strength = 10000.0
+			var damping = 500
+			apply_torque(angleDifference * torque_strength - angular_velocity * damping)
 	
 func _ready() -> void:
 	add_collision_exception_with(rigidBody)

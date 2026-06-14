@@ -4,7 +4,7 @@ extends BaseWeapon
 @export var bulletScene : PackedScene = load("res://Bullets/RevolverBullet.tscn")
 @export var bulletSpeed : float = 3000.0
 @export var bulletDamage : float = 31.0
-@export var bulletKnockback : float = 200.0
+@export var bulletKnockback : float = 400.0
 
 @onready var muzzlePoint : Marker2D = $MuzzlePoint
 

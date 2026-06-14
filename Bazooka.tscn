@@ -7,7 +7,7 @@
 z_index = 20
 z_as_relative = false
 script = ExtResource("1_3oppd")
-bulletSpeed = 1500.0
+bulletSpeed = 850.0
 bulletDamage = 130.0
 bulletKnockback = 1400.0
 explosionRadius = 170.0

@@ -83,18 +83,18 @@ shape = SubResource("RectangleShape2D_8oubu")
 
 [node name="LeftFloorRayCast" type="RayCast2D" parent="." unique_id=2116509609]
 z_index = 9
-position = Vector2(26, 62.999992)
-target_position = Vector2(0, 65)
+position = Vector2(28, 62.999992)
+target_position = Vector2(0, 66)
 
 [node name="RightFloorRayCast" type="RayCast2D" parent="." unique_id=960897052]
 z_index = 9
 position = Vector2(-24, 62.999992)
-target_position = Vector2(0, 65)
+target_position = Vector2(0, 66)
 
 [node name="FloorRayCast" type="RayCast2D" parent="." unique_id=373225311]
 z_index = 9
 position = Vector2(2, 62.999992)
-target_position = Vector2(0, 65)
+target_position = Vector2(0, 66)
 
 [node name="TargetPoint" type="Marker2D" parent="." unique_id=1762091035]
 position = Vector2(1, -13)

@@ -51,8 +51,6 @@ func _balance(delta : float) -> void:
 			var extraForceMult = clamp(ceil(unbalanacedTime / 1.2), 1, 4)
 			var directionPower = clamp(-getrotation, -90.0, 90.0)
 			apply_torque(directionPower * extraForceMult * balancePower)
-		else:
-			unbalanacedTime = 0
 	else:
 		if unbalanacedTime > 0:
 			angular_velocity = angular_velocity / 100.0
@@ -97,14 +95,12 @@ func _handleVisuals() -> void:
 	sprite.flip_h = !turnRight
 	armSprite.flip_h = !turnRight
 	if currentWeapon:
-		var weaponSprite: Sprite2D = currentWeapon.get_node("Sprite2D")
+		var weaponSprite = currentWeapon.get_node("Sprite2D")
 		if currentWeapon.flipx:
 			weaponSprite.flip_h = !turnRight
-			weaponSprite.flip_v = false
 		else:
 			weaponSprite.flip_v = !turnRight
-			weaponSprite.flip_h = false
-		currentWeapon.muzzlePoint.position.x = -absf(currentWeapon.muzzlePoint.position.x) if !turnRight else absf(currentWeapon.muzzlePoint.position.x)
+			currentWeapon.muzzlePoint.position.x = -absf(currentWeapon.muzzlePoint.position.x) if !turnRight else absf(currentWeapon.muzzlePoint.position.x)
 	#var direction = 1 if turnRight else -1
 	#$Arm.position = Vector2(armPosition.x * direction, armPosition.y)
 	#$PinJoint2D.position = Vector2(jointPosition.x * direction, jointPosition.y)
